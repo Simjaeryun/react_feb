@@ -1,0 +1,32 @@
+.header {
+	width: 100%;
+	background: #333;
+	.inner {
+		width: 1180px;
+		height: 100px;
+		margin: 0 auto;
+		position: relative;
+		h1 {
+			position: absolute;
+			left: 0px;
+			bottom: 20px;
+			a {
+				font: bold 24px/1 "arial";
+				color: #fff;
+			}
+		}
+		#gnb {
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			display: flex;
+			a {
+				display: inline-block;
+				padding: 22px 30px;
+				font: 14px/1 "arial";
+				color: #fff;
+				transition: 0.5s;
+			}
+		}
+	}
+}
