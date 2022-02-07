@@ -28,6 +28,14 @@
 				transition: 0.5s;
 			}
 		}
+		.fa-bars {
+			font-size: 20px;
+			color: #fff;
+			position: absolute;
+			bottom: 20px;
+			right: 5vw;
+			display: none;
+		}
 	}
 }
 
@@ -40,6 +48,14 @@
 			}
 			#gnb {
 				display: none;
+			}
+			.fa-bars {
+				font-size: 20px;
+				color: #fff;
+				position: absolute;
+				bottom: 20px;
+				right: 5vw;
+				display: block;
 			}
 		}
 	}
