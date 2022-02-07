@@ -3,6 +3,7 @@
 		width: 100%;
 		height: 300px;
 		background: cornflowerblue;
+		transition: 0.5s;
 	}
 	> .inner {
 		width: 1180px;
@@ -15,6 +16,19 @@
 		}
 		> section {
 			min-height: 500px;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.content {
+		> figure {
+			height: 200px;
+		}
+		> .inner {
+			width: 100%;
+			padding: 0px 3vw;
+			padding-top: 80px;
 		}
 	}
 }
