@@ -27,7 +27,7 @@ export default function Department() {
                     {members.map((data, idx) => {
                         return (
                             <article key={idx}>
-                                <img src={`${path}/`} alt="profile사진" />
+                                <img src={`${path}/img/${data.pic}`} alt="profile사진" />
                                 <h2>{data.name}</h2>
                                 <p>{data.position}</p>
                             </article>

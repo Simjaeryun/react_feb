@@ -1,0 +1,21 @@
+figure {
+	width: 100%;
+	height: calc(100vh - 100px);
+	background: cornsilk;
+	position: relative;
+	.inner {
+		width: 1180px;
+		height: 100%;
+		margin: 0px auto;
+		padding: 50px 0px;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	figure {
+		.inner {
+			width: 100%;
+			padding: 20px 6vw;
+		}
+	}
+}

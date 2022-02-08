@@ -1,6 +1,23 @@
-.header {
+header {
 	width: 100%;
 	background: #333;
+	&.main {
+		background: #fff;
+		.inner {
+			h1 {
+				a {
+					color: #333;
+				}
+			}
+			#gnb {
+				li {
+					a {
+						color: #555;
+					}
+				}
+			}
+		}
+	}
 	.inner {
 		width: 1180px;
 		height: 100px;
