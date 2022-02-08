@@ -1,0 +1,33 @@
+.gallery {
+	.inner {
+		> section {
+			display: flex;
+			article {
+				width: 20%;
+				height: 300px;
+				padding: 10px;
+				.inner {
+					width: 100%;
+					height: 100%;
+					background: #fff;
+					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+					padding: 10px;
+				}
+				.pic {
+					width: 100%;
+					height: 180px;
+					margin-bottom: 20px;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				h2 {
+					font: normal 14px/1.2 "arial";
+					color: #777;
+				}
+			}
+		}
+	}
+}
