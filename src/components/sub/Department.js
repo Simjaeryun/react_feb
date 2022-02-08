@@ -12,7 +12,6 @@ export default function Department() {
         axios
             .get(url)
             .then(json => {
-                console.log(json.data.data)
                 setMembers(json.data.data)
             });
 

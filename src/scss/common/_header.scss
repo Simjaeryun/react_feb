@@ -2,17 +2,25 @@ header {
 	width: 100%;
 	background: #333;
 	&.main {
-		background: #fff;
+		background: transparent;
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 100px;
+		left: 0px;
+		z-index: 5;
 		.inner {
+			width: 100%;
+			height: 100%;
+			position: relative;
 			h1 {
-				a {
-					color: #333;
-				}
+				left: 10vw;
 			}
 			#gnb {
+				right: 10vw;
 				li {
 					a {
-						color: #555;
+						color: #fff;
 					}
 				}
 			}

@@ -3,9 +3,9 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
 //main
-import Info from "./components/main/Info";
-import Intro from "./components/main/Intro";
-import Visual from "./components/main/Visual";
+import Main from "./components/main/Main";
+
+//sub
 import Department from "./components/sub/Department";
 import Community from "./components/sub/Community";
 import Gallery from "./components/sub/Gallery";
@@ -17,18 +17,12 @@ import { Route, Switch } from 'react-router-dom';
 import './scss/style.scss'
 
 
+
 function App() {
   return (
     <div className="App">
-
-
-
       <Switch>
-        <Route exact path="/">
-          <Header type={"main"} />
-          <Visual />
-          <Intro />
-          <Info />
+        <Route exact path="/" component={Main}>
         </Route>
 
         <Route path="/">
