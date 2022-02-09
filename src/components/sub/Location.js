@@ -54,10 +54,16 @@ export default function Location() {
         })
 
         map.setCenter(mapInfo[index].latlng);
+
+        const mapSet = () => {
+            map.setCenter(mapInfo[index].latlng);
+        }
+        window.addEventListener("resize", mapSet)
+
+        return () => window.removeEventListener(mapSet)
     }, [index])
 
     // index state값이 실행
-
     return (
         <main className="content location" ref={main}>
             <figure>
@@ -77,15 +83,15 @@ export default function Location() {
                             }}>교통정보닫기</button>
                         </nav>
                         <nav className="info_btn">
-                            <button onClick={() => {
-                                setIndex(0);
-                            }}>본점보기</button>
-                            <button onClick={() => {
-                                setIndex(1);
-                            }}>지점보기</button>
-                            <button onClick={() => {
-                                setIndex(2);
-                            }}>지점2보기</button>
+                            {mapInfo.map((data, idx) => {
+                                return (
+                                    <button key={idx} onClick={() => {
+                                        setIndex(idx)
+                                    }}>
+                                        {data.title}
+                                    </button>
+                                )
+                            })}
                         </nav>
                     </div>
 
