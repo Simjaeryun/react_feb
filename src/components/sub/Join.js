@@ -8,6 +8,9 @@ export default function Join() {
         pwd2: '',
         email: '',
         comments: '',
+        interests: '',
+        gender: '',
+        edu: '',
     }
     const [val, setVal] = useState(initVal);
     const [err, setErr] = useState({});
@@ -18,11 +21,31 @@ export default function Join() {
         const { name, value } = e.target;
         setVal({ ...val, [name]: value })
     }
-
+    const handleRadio = e => {
+        const { name } = e.target;
+        const isCheck = e.target.checked;
+        setVal({ ...val, [name]: isCheck });
+        console.log(e.target.parentNode.childNodes)
+    }
+    const handleCheck = e => {
+        let isChecked = false;
+        const { name } = e.target;
+        const inputs = e.target.parentElement.querySelectorAll('input');
+        inputs.forEach(el => {
+            if (el.checked) isChecked = true;
+        });
+        setVal({ ...val, [name]: isChecked });
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmit(true);
         setErr(check(val));
+    }
+
+    const handleSelect = (e) => {
+        const { name } = e.target;
+        const isSelected = e.target.options[e.target.selectedIndex].value
+        setVal({ ...val, [name]: isSelected })
     }
 
     const check = val => {
@@ -45,6 +68,15 @@ export default function Join() {
         }
         if (val.comments.length < 10) {
             errs.comments = "남기는말을 10글자 이상 입력하세요"
+        }
+        if (!val.gender) {
+            errs.gender = '성별을 선택하세요'
+        }
+        if (!val.interests) {
+            errs.interests = '관심사를 하나 이상 선택하세요'
+        }
+        if (!val.edu) {
+            errs.edu = '학력을 선택해주세요'
         }
         return errs;
     }
@@ -148,6 +180,71 @@ export default function Join() {
                                             <span className="err">{err.email}</span>
                                         </td>
                                     </tr>
+                                    {/* edu */}
+                                    <tr>
+                                        <th scope="row">
+                                            <label htmlFor="edu">Education</label>
+                                        </th>
+                                        <td>
+                                            <select name="edu" id="edu" onChange={handleSelect}>
+                                                <option value="">학력을 선택하세요</option>
+                                                <option value="elementary-school">초등학교 졸업</option>
+                                                <option value="middle-school">중학교 졸업</option>
+                                                <option value="high-school">고등학교 졸업</option>
+                                                <option value="college">대학교 졸업</option>
+                                            </select>
+                                            <span className="err">{err.edu}</span>
+                                        </td>
+                                    </tr>
+                                    {/* Gender */}
+                                    <tr>
+                                        <th scope="row">Gender</th>
+                                        <td>
+                                            <label htmlFor="gender">Gender</label>
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                id="male"
+                                                onChange={handleRadio}
+                                            />
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                id="female"
+                                                onChange={handleRadio}
+                                            />
+                                            <span className="err">{err.gender}</span>
+                                        </td>
+                                    </tr>
+
+                                    {/* Interests */}
+                                    <tr>
+                                        <th scope="row">INTERESTES</th>
+                                        <td>
+                                            <label htmlFor="sports">Sports</label>
+                                            <input
+                                                type="checkbox"
+                                                name="interests"
+                                                id="sports"
+                                                onChange={handleCheck}
+                                            />
+                                            <label htmlFor="music">music</label>
+                                            <input
+                                                type="checkbox"
+                                                name="interests"
+                                                id="music"
+                                                onChange={handleCheck}
+                                            />
+                                            <label htmlFor="game">game</label>
+                                            <input
+                                                type="checkbox"
+                                                name="interests"
+                                                id="game"
+                                                onChange={handleCheck}
+                                            />
+                                            <span className="err">{err.interests}</span>
+                                        </td>
+                                    </tr>
                                     {/* Comments */}
                                     <tr>
                                         <th>
@@ -165,6 +262,7 @@ export default function Join() {
                                             <span className="err">{err.comments}</span>
                                         </td>
                                     </tr>
+                                    {/* Button */}
                                     <tr>
                                         <th colSpan='2'>
                                             <input type="reset" value='CANCLE' />
