@@ -13,3 +13,21 @@ li {
 a {
 	text-decoration: none;
 }
+
+table {
+	border-collapse: collapse;
+}
+fieldset {
+	border: none;
+}
+
+label,
+input {
+	vertical-align: middle;
+}
+
+.h {
+	position: absolute;
+	top: -99999px;
+	opacity: 0;
+}

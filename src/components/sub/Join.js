@@ -8,9 +8,9 @@ export default function Join() {
         pwd2: '',
         email: '',
         comments: '',
-        interests: '',
-        gender: '',
-        edu: '',
+        interests: false,
+        gender: false,
+        edu: false,
     }
     const [val, setVal] = useState(initVal);
     const [err, setErr] = useState({});
@@ -25,7 +25,6 @@ export default function Join() {
         const { name } = e.target;
         const isCheck = e.target.checked;
         setVal({ ...val, [name]: isCheck });
-        console.log(e.target.parentNode.childNodes)
     }
     const handleCheck = e => {
         let isChecked = false;
@@ -46,6 +45,12 @@ export default function Join() {
         const { name } = e.target;
         const isSelected = e.target.options[e.target.selectedIndex].value
         setVal({ ...val, [name]: isSelected })
+    }
+
+    const handleReset = (e) => {
+        setVal(initVal);
+        setErr({});
+        setIsSubmit(false);
     }
 
     const check = val => {
@@ -105,12 +110,12 @@ export default function Join() {
             <div className="inner">
                 <h1>Join</h1>
                 <section>
-                    {success ? <div>회원가입을 축하합니다.</div> : null}
+                    {success ? <div className="success">회원가입을 축하합니다.</div> : null}
                     <form onSubmit={handleSubmit}>
                         <fieldset>
-                            <legend>회원가입 폼 양식</legend>
+                            <legend className="h">회원가입 폼 양식</legend>
                             <table>
-                                <caption>회원가입 입력</caption>
+                                <caption className="h">회원가입 입력</caption>
                                 <tbody>
                                     {/* User ID */}
                                     <tr>
@@ -200,13 +205,14 @@ export default function Join() {
                                     <tr>
                                         <th scope="row">Gender</th>
                                         <td>
-                                            <label htmlFor="gender">Gender</label>
+                                            <label htmlFor="male">Male</label>
                                             <input
                                                 type="radio"
                                                 name="gender"
                                                 id="male"
                                                 onChange={handleRadio}
                                             />
+                                            <label htmlFor="female">Female</label>
                                             <input
                                                 type="radio"
                                                 name="gender"
@@ -216,7 +222,6 @@ export default function Join() {
                                             <span className="err">{err.gender}</span>
                                         </td>
                                     </tr>
-
                                     {/* Interests */}
                                     <tr>
                                         <th scope="row">INTERESTES</th>
@@ -264,8 +269,8 @@ export default function Join() {
                                     </tr>
                                     {/* Button */}
                                     <tr>
-                                        <th colSpan='2'>
-                                            <input type="reset" value='CANCLE' />
+                                        <th colSpan="2" className="btnSet">
+                                            <input type="reset" value='CANCLE' onClick={handleReset} />
                                             <input
                                                 type="submit"
                                                 value="SEND"
