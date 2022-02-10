@@ -7,6 +7,7 @@ export default function Join() {
         pwd1: '',
         pwd2: '',
         email: '',
+        comments: '',
     }
     const [val, setVal] = useState(initVal);
     const [err, setErr] = useState({});
@@ -36,8 +37,11 @@ export default function Join() {
             errs.pwd1 = '비밀번호는 5글자 이상 문자, 숫자, 특수문자를 포함하세요'
         }
 
-        if (val.pwd1 !== val.pwd2) {
+        if (val.pwd1 !== val.pwd2 || val.pwd2.length === 0) {
             errs.pwd2 = "두개의 비밀번호를 동일하게 입력하세요"
+        }
+        if (val.comments.length < 10) {
+            errs.comments = "남기는말을 10글자 이상 입력하세요"
         }
         return errs;
     }
@@ -70,7 +74,6 @@ export default function Join() {
                     <form onSubmit={handleSubmit}>
                         <fieldset>
                             <legend>회원가입 폼 양식</legend>
-
                             <table>
                                 <caption>회원가입 입력</caption>
                                 <tbody>
@@ -88,6 +91,7 @@ export default function Join() {
                                                 value={val.userid}
                                                 onChange={handleChange}
                                             />
+                                            <span className="err">{err.userid}</span>
                                         </td>
                                     </tr>
                                     {/* Password */}
@@ -104,6 +108,7 @@ export default function Join() {
                                                 value={val.pwd1}
                                                 onChange={handleChange}
                                             />
+                                            <span className="err">{err.pwd1}</span>
                                         </td>
                                     </tr>
                                     {/* Re Password */}
@@ -120,8 +125,10 @@ export default function Join() {
                                                 value={val.pwd2}
                                                 onChange={handleChange}
                                             />
+                                            <span className="err">{err.pwd2}</span>
                                         </td>
                                     </tr>
+                                    {/* Email */}
                                     <tr>
                                         <th>
                                             <label htmlFor="email">E-mail</label>
@@ -135,9 +142,26 @@ export default function Join() {
                                                 value={val.email}
                                                 onChange={handleChange}
                                             />
+                                            <span className="err">{err.email}</span>
                                         </td>
                                     </tr>
-
+                                    {/* Comments */}
+                                    <tr>
+                                        <th>
+                                            <label htmlFor="comments">LEAVE COMMENTS</label>
+                                        </th>
+                                        <td>
+                                            <textarea
+                                                name="comments"
+                                                id="comments"
+                                                value={val.comments}
+                                                onChange={handleChange}
+                                                cols="30"
+                                                rows="10"
+                                            ></textarea>
+                                            <span className="err">{err.comments}</span>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <th colSpan='2'>
                                             <input type="reset" value='CANCLE' />
