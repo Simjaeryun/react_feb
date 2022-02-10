@@ -11,6 +11,8 @@ export default function Join() {
     }
     const [val, setVal] = useState(initVal);
     const [err, setErr] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [success, setSucess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,6 +21,7 @@ export default function Join() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSubmit(true);
         setErr(check(val));
     }
 
@@ -26,7 +29,7 @@ export default function Join() {
         let errs = {}
         const eng = /[a-zA-Z]/;
         const num = /[0-9]/;
-        const spc = /[~!@#$%^&*()_+-\]\[]/;
+        const spc = /[~!@#$%^&*()_+-\][]/;
         if (val.userid.length < 5) {
             errs.userid = 'id를 5글자 이상 입력하세요';
         }
@@ -55,13 +58,12 @@ export default function Join() {
 
         const len = Object.keys(err).length;
 
-        console.log(len)
-        if (len === 0) {
-            console.log("모든 인풋요소 인증 통과")
+        if (len === 0 && isSubmit) {
+            setSucess(true);
         } else {
-            console.log(err);
+            setSucess(false);
         }
-    }, [err])
+    }, [err, isSubmit])
 
 
     return (
@@ -71,6 +73,7 @@ export default function Join() {
             <div className="inner">
                 <h1>Join</h1>
                 <section>
+                    {success ? <div>회원가입을 축하합니다.</div> : null}
                     <form onSubmit={handleSubmit}>
                         <fieldset>
                             <legend>회원가입 폼 양식</legend>
