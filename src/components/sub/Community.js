@@ -6,7 +6,6 @@ export default function Community() {
     const textarea = useRef(null);
     const showBox = useRef(null);
 
-
     const [posts, setPosts] = useState([
         {
             title: 'hello',
@@ -32,7 +31,6 @@ export default function Community() {
                 content: textarea.current.value
             },
             ...posts
-
         ])
         input.current.value = "";
         textarea.current.value = "";
@@ -49,7 +47,6 @@ export default function Community() {
         )
         console.log(posts)
     }
-
 
     useEffect(() => {
         main.current.classList.add("on");
@@ -89,19 +86,48 @@ export default function Community() {
                         {posts.map((post, idx) => {
                             return (
                                 <article key={idx}>
-                                    <h2>{post.title}</h2>
-                                    <p>{post.content}</p>
-                                    <div className="btn">
-                                        {/* delet버튼 */}
-                                        <button onClick={() => {
-                                            deletePost(idx)
-                                        }}>Delete</button>
-                                        {/* edit 버튼 */}
-                                        <button onClick={() => {
-                                            enableUpdate(idx)
-                                        }}>Modify</button>
-                                    </div>
+                                    {
+                                        post.enableUpdate
+                                            ?
+                                            <>
+                                                <div className="post">
+                                                    <input type="text" defaultValue={post.title} />
+                                                    <br />
+                                                    <textarea defaultValue={post.content} cols="30" rows="10">
+                                                    </textarea>
+                                                    <br />
+                                                </div>
+                                                <div className="btns">
+                                                    {/* delet버튼 */}
+                                                    <button onClick={() => {
+                                                        deletePost(idx)
+                                                    }}>Delete</button>
+                                                    {/* edit 버튼 */}
+                                                    <button onClick={() => {
+                                                        enableUpdate(idx)
+                                                    }}>Modify</button>
+                                                </div>
+                                            </>
 
+                                            :
+                                            <>
+                                                <div className="post">
+                                                    <h2>{post.title}</h2>
+                                                    <p>{post.content}</p>
+                                                </div>
+                                                <div className="btns">
+                                                    {/* delet버튼 */}
+                                                    <button onClick={() => {
+                                                        deletePost(idx)
+                                                    }}>Delete</button>
+                                                    {/* edit 버튼 */}
+                                                    <button onClick={() => {
+                                                        enableUpdate(idx)
+                                                    }}>Modify</button>
+                                                </div>
+                                            </>
+
+                                    }
                                 </article>
                             )
                         })}
