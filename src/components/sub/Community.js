@@ -48,6 +48,20 @@ export default function Community() {
         console.log(posts)
     }
 
+    const disableUpdate = (index) => {
+        setPosts(
+            posts.map((post, idx) => {
+                if (idx === index) {
+                    post.enableUpdate = false;
+                }
+                return post
+            })
+        )
+        console.log(posts)
+    }
+
+    const updatePost = () => { }
+
     useEffect(() => {
         main.current.classList.add("on");
     }, [])
@@ -100,12 +114,12 @@ export default function Community() {
                                                 <div className="btns">
                                                     {/* delet버튼 */}
                                                     <button onClick={() => {
-                                                        deletePost(idx)
-                                                    }}>Delete</button>
+                                                        updatePost(idx)
+                                                    }}>Update</button>
                                                     {/* edit 버튼 */}
                                                     <button onClick={() => {
-                                                        enableUpdate(idx)
-                                                    }}>Modify</button>
+                                                        disableUpdate(idx)
+                                                    }}>Cancel</button>
                                                 </div>
                                             </>
 
