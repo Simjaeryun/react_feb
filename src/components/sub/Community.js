@@ -5,6 +5,8 @@ export default function Community() {
     const input = useRef(null);
     const textarea = useRef(null);
     const showBox = useRef(null);
+    const updateInput = useRef(null);
+    const updateTextarea = useRef(null);
 
     const [posts, setPosts] = useState([
         {
@@ -25,6 +27,16 @@ export default function Community() {
 
     const createPost = (e) => {
         e.preventDefault();
+
+        const inputVal = input.current.value.trim();
+        const textareaVal = textarea.current.value.trim();
+        if (!inputVal || !textareaVal || textareaVal === "" || inputVal === "") {
+            alert("본문과 제목을 입력하세요")
+            input.current.value = "";
+            textarea.current.value = "";
+            return;
+        }
+
         setPosts([
             {
                 title: input.current.value,
@@ -60,7 +72,26 @@ export default function Community() {
         console.log(posts)
     }
 
-    const updatePost = () => { }
+    const updatePost = (index) => {
+        const updateInputVal = updateInput.current.value.trim();
+        const updateTextareaVal = updateTextarea.current.value.trim();
+        if (!updateInputVal || !updateTextareaVal || updateInputVal === "" || updateTextareaVal === "") {
+            alert("본문과 제목을 입력하세요")
+            updateInput.current.value = "";
+            updateTextarea.current.value = "";
+            return;
+        }
+        setPosts(
+            posts.map((post, idx) => {
+                if (idx === index) {
+                    post.title = updateInput.current.value
+                    post.content = updateTextarea.current.value
+                    post.enableUpdate = false
+                }
+                return post
+            })
+        )
+    }
 
     useEffect(() => {
         main.current.classList.add("on");
@@ -72,7 +103,6 @@ export default function Community() {
             </figure>
             <div className="inner">
                 <h1>Community</h1>
-
                 <section>
                     <div className='inputBox'>
                         <input
@@ -105,18 +135,27 @@ export default function Community() {
                                             ?
                                             <>
                                                 <div className="post">
-                                                    <input type="text" defaultValue={post.title} />
+                                                    <input
+                                                        type="text"
+                                                        defaultValue={post.title}
+                                                        ref={updateInput}
+                                                    />
                                                     <br />
-                                                    <textarea defaultValue={post.content} cols="30" rows="10">
+                                                    <textarea
+                                                        defaultValue={post.content}
+                                                        cols="30"
+                                                        rows="10"
+                                                        ref={updateTextarea}
+                                                    >
                                                     </textarea>
                                                     <br />
                                                 </div>
                                                 <div className="btns">
-                                                    {/* delet버튼 */}
+
                                                     <button onClick={() => {
                                                         updatePost(idx)
                                                     }}>Update</button>
-                                                    {/* edit 버튼 */}
+
                                                     <button onClick={() => {
                                                         disableUpdate(idx)
                                                     }}>Cancel</button>
