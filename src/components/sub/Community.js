@@ -6,6 +6,7 @@ export default function Community() {
     const textarea = useRef(null);
     const showBox = useRef(null);
 
+
     const [posts, setPosts] = useState([
         {
             title: 'hello',
@@ -17,18 +18,38 @@ export default function Community() {
         },
     ]);
 
+    const deletePost = (index) => {
+        setPosts(
+            posts.filter((_, idx) => idx !== index)
+        )
+    }
+
     const createPost = (e) => {
         e.preventDefault();
         setPosts([
-            ...posts,
             {
                 title: input.current.value,
                 content: textarea.current.value
-            }
+            },
+            ...posts
+
         ])
         input.current.value = "";
         textarea.current.value = "";
     }
+
+    const enableUpdate = (index) => {
+        setPosts(
+            posts.map((post, idx) => {
+                if (idx === index) {
+                    post.enableUpdate = true;
+                }
+                return post
+            })
+        )
+        console.log(posts)
+    }
+
 
     useEffect(() => {
         main.current.classList.add("on");
@@ -70,6 +91,17 @@ export default function Community() {
                                 <article key={idx}>
                                     <h2>{post.title}</h2>
                                     <p>{post.content}</p>
+                                    <div className="btn">
+                                        {/* delet버튼 */}
+                                        <button onClick={() => {
+                                            deletePost(idx)
+                                        }}>Delete</button>
+                                        {/* edit 버튼 */}
+                                        <button onClick={() => {
+                                            enableUpdate(idx)
+                                        }}>Modify</button>
+                                    </div>
+
                                 </article>
                             )
                         })}
