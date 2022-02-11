@@ -9,31 +9,29 @@ export default function Community() {
     const updateTextarea = useRef(null);
 
     const getLocalItems = () => {
-        let data = localStorage.getItem("posts");
-        if (data) return JSON.parse(data);
-        else return [];
+        let data = localStorage.getItem('posts');
+        //만약 로컬저장소에 posts키값의 데이터가 있으면
+        if (data) {
+            //해당 데이터를 객체형태로 다시 변환해서 리턴
+            return JSON.parse(data);
+        }
+        //로컬 저장소에 데이터가 없을때 (해당 컴포넌트가 첨 로딩시)
+        else {
+            return [];
+        }
     }
 
-    const [posts, setPosts] = useState(getLocalItems);
+    //getLocalItems의 리턴값에 따라 posts에 값이 할당됨
+    const [posts, setPosts] = useState(getLocalItems)
 
-    const deletePost = (index) => {
-        setPosts(
-            posts.filter((_, idx) => idx !== index)
-        )
-    }
-
-    const createPost = (e) => {
-        e.preventDefault();
-
+    const createPost = () => {
         const inputVal = input.current.value.trim();
         const textareaVal = textarea.current.value.trim();
-        if (!inputVal || !textareaVal || textareaVal === "" || inputVal === "") {
-            alert("본문과 제목을 입력하세요")
-            input.current.value = "";
-            textarea.current.value = "";
+
+        if (!inputVal || !textareaVal || inputVal === '' || textareaVal === '') {
+            alert('제목과 본문을 입력하세요.')
             return;
         }
-
         setPosts([
             {
                 title: input.current.value,
@@ -41,70 +39,76 @@ export default function Community() {
             },
             ...posts
         ])
-        input.current.value = "";
-        textarea.current.value = "";
+
+        input.current.value = '';
+        textarea.current.value = '';
     }
 
-    const enableUpdate = (index) => {
+    const deletePost = index => {
+        setPosts(
+            posts.filter((_, idx) => idx !== index)
+        )
+    }
+
+    const enableUpdate = index => {
         setPosts(
             posts.map((post, idx) => {
-                if (idx === index) {
-                    post.enableUpdate = true;
-                }
-                return post
+                if (idx === index) post.enableUpdate = true;
+                return post;
             })
         )
-        console.log(posts)
+        console.log(posts);
     }
 
-    const disableUpdate = (index) => {
+    const disableUpdate = index => {
         setPosts(
             posts.map((post, idx) => {
-                if (idx === index) {
-                    post.enableUpdate = false;
-                }
-                return post
+                if (idx === index) post.enableUpdate = false;
+                return post;
             })
         )
-        console.log(posts)
+        console.log(posts);
     }
 
-    const updatePost = (index) => {
-        const updateInputVal = updateInput.current.value.trim();
-        const updateTextareaVal = updateTextarea.current.value.trim();
-        if (!updateInputVal || !updateTextareaVal || updateInputVal === "" || updateTextareaVal === "") {
-            alert("본문과 제목을 입력하세요")
-            updateInput.current.value = "";
-            updateTextarea.current.value = "";
+    //실제 post 업데이트 함수
+    const updatePost = index => {
+        const inputVal2 = updateInput.current.value.trim();
+        const textareaVal2 = updateTextarea.current.value.trim();
+
+        if (!inputVal2 || !textareaVal2 || inputVal2 === '' || textareaVal2 === '') {
+            alert('수정할 제목과 본문을 입력하세요.')
             return;
         }
         setPosts(
             posts.map((post, idx) => {
                 if (idx === index) {
-                    post.title = updateInput.current.value
-                    post.content = updateTextarea.current.value
-                    post.enableUpdate = false
+                    post.title = updateInput.current.value;
+                    post.content = updateTextarea.current.value;
+                    post.enableUpdate = false;
                 }
-                return post
+                return post;
             })
         )
     }
 
     useEffect(() => {
-        main.current.classList.add("on");
+        main.current.classList.add('on');
     }, [])
 
+    //posts값이 변경될때마사 실행될 hook
     useEffect(() => {
         console.log('posts state변경됨')
+        //로컬스토리지에 posts키값으로 기존데이터를 문자형태로 변환해서 저장
         localStorage.setItem('posts', JSON.stringify(posts))
     }, [posts]);
 
     return (
         <main className="content community" ref={main}>
-            <figure>
-            </figure>
+            <figure></figure>
+
             <div className="inner">
                 <h1>Community</h1>
+
                 <section>
                     <div className='inputBox'>
                         <input
@@ -120,11 +124,11 @@ export default function Community() {
                         >
                         </textarea><br />
 
-                        <button onClick={(e) => {
-                            e.preventDefault();
-                            input.current.value = "";
-                            textarea.current.value = "";
+                        <button onClick={() => {
+                            input.current.value = '';
+                            textarea.current.value = '';
                         }}>cancel</button>
+
                         <button onClick={createPost}>create</button>
                     </div>
 
@@ -135,59 +139,48 @@ export default function Community() {
                                     {
                                         post.enableUpdate
                                             ?
+                                            // 수정모드 일때 리턴될 JSX
                                             <>
                                                 <div className="post">
                                                     <input
                                                         type="text"
                                                         defaultValue={post.title}
                                                         ref={updateInput}
-                                                    />
-                                                    <br />
+                                                    /><br />
                                                     <textarea
                                                         defaultValue={post.content}
-                                                        cols="30"
-                                                        rows="10"
                                                         ref={updateTextarea}
                                                     >
-                                                    </textarea>
-                                                    <br />
+                                                    </textarea><br />
                                                 </div>
+
                                                 <div className="btns">
-
-                                                    <button onClick={() => {
-                                                        updatePost(idx)
-                                                    }}>Update</button>
-
-                                                    <button onClick={() => {
-                                                        disableUpdate(idx)
-                                                    }}>Cancel</button>
+                                                    <button onClick={() => updatePost(idx)}>update</button>
+                                                    <button onClick={() => disableUpdate(idx)}>cancel</button>
                                                 </div>
                                             </>
                                             :
+                                            // 출력모드 일때 리턴될 JSX
                                             <>
                                                 <div className="post">
                                                     <h2>{post.title}</h2>
                                                     <p>{post.content}</p>
                                                 </div>
+
                                                 <div className="btns">
-                                                    {/* delet버튼 */}
-                                                    <button onClick={() => {
-                                                        deletePost(idx)
-                                                    }}>Delete</button>
-                                                    {/* edit 버튼 */}
-                                                    <button onClick={() => {
-                                                        enableUpdate(idx)
-                                                    }}>Modify</button>
+                                                    <button onClick={() => enableUpdate(idx)}>modify</button>
+                                                    <button onClick={() => deletePost(idx)}>delete</button>
                                                 </div>
                                             </>
                                     }
+
+
                                 </article>
                             )
                         })}
                     </div>
                 </section>
-            </div >
-        </main >
+            </div>
+        </main>
     )
 }
-

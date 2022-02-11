@@ -1,0 +1,36 @@
+#intro {
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	padding: 150px 0px;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		h1 {
+			font: bold 24px/1 "arial";
+			color: #333;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		article {
+			width: 500px;
+			padding: 30px;
+			border: 1px solid #ddd;
+			margin: 0px auto;
+			path {
+				fill: transparent; //배경색
+				stroke: #000; //선의색깔
+				stroke-width: 5; //선의 굵기
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				transition: all 2s;
+			}
+			&:hover {
+				path {
+					stroke-dashoffset: 0;
+					fill: rgba(0, 0, 0, 0.5);
+				}
+			}
+		}
+	}
+}
