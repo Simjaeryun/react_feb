@@ -1,7 +1,7 @@
 import Header from "../common/Header";
 import Visual from "./Visual";
 import Intro from "./Intro";
-import Info from "./Info";
+import News from "./News";
 
 export default function Main() {
     return (
@@ -9,7 +9,7 @@ export default function Main() {
             <Header type={"main"} />
             <Visual />
             <Intro />
-            <Info />
+            <News />
         </>
     )
 }

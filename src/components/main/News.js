@@ -1,8 +1,11 @@
-export default function Info() {
+import { useEffect, useState } from "react";
+
+export default function News() {
     return (
         <section className="info">
             <div className="inner">
-                <h1>Information</h1>
+                <h1>Recent Post</h1>
+
             </div>
         </section>
     )
