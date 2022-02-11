@@ -8,16 +8,13 @@ export default function Community() {
     const updateInput = useRef(null);
     const updateTextarea = useRef(null);
 
-    const [posts, setPosts] = useState([
-        {
-            title: 'hello',
-            content: 'Here comes description in detail'
-        },
-        {
-            title: 'hello2',
-            content: 'Here comes description in detail2'
-        },
-    ]);
+    const getLocalItems = () => {
+        let data = localStorage.getItem("posts");
+        if (data) return JSON.parse(data);
+        else return [];
+    }
+
+    const [posts, setPosts] = useState(getLocalItems);
 
     const deletePost = (index) => {
         setPosts(
@@ -97,6 +94,11 @@ export default function Community() {
         main.current.classList.add("on");
     }, [])
 
+    useEffect(() => {
+        console.log('posts state변경됨')
+        localStorage.setItem('posts', JSON.stringify(posts))
+    }, [posts]);
+
     return (
         <main className="content community" ref={main}>
             <figure>
@@ -161,7 +163,6 @@ export default function Community() {
                                                     }}>Cancel</button>
                                                 </div>
                                             </>
-
                                             :
                                             <>
                                                 <div className="post">
@@ -179,7 +180,6 @@ export default function Community() {
                                                     }}>Modify</button>
                                                 </div>
                                             </>
-
                                     }
                                 </article>
                             )
