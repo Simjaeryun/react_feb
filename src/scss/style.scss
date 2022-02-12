@@ -7,6 +7,7 @@ $mobile: 639px;
 @import "./common/reset";
 @import "./common/layout";
 @import "./common/header";
+@import "./common/side";
 @import "./common/footer";
 
 //main
@@ -21,3 +22,7 @@ $mobile: 639px;
 @import "./sub/yotube";
 @import "./sub/location";
 @import "./sub/join";
+
+html {
+	font-size: 10px;
+}

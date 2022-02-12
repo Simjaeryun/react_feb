@@ -1,0 +1,30 @@
+.side {
+	width: 10rem;
+	height: 100vh;
+	background: #f3f3f3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-right: 2px solid #e0e0e0;
+
+	.side_logo {
+		writing-mode: vertical-lr;
+		margin: 50px auto;
+		transform: rotate(180deg);
+	}
+
+	.side_icon_box {
+		.side_icon {
+			width: 100%;
+			height: 60px;
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
