@@ -9,9 +9,6 @@ export default function Visual() {
                         Banner
                     </div>
                 </div>
-                <div className="txt">
-                    <h2>hi</h2>
-                </div>
             </div>
         </figure>
     )
