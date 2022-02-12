@@ -1,0 +1,28 @@
+.highlight {
+	.inner {
+		h1 {
+			font-size: 35px;
+			margin-bottom: 40px;
+		}
+		.img_container {
+			width: 3220px;
+			height: 270px;
+			display: flex;
+			.img_box {
+				width: 460px;
+				height: 100%;
+				flex-shrink: 0;
+				background: #ececec;
+				margin-right: 10px;
+				border-radius: 20px;
+				padding: 40px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				h2 {
+					font-size: 24px;
+				}
+			}
+		}
+	}
+}
