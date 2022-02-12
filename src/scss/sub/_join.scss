@@ -1,70 +1,77 @@
-.success {
-	width: 100%;
-	padding: 20px 20px;
-	text-align: center;
-	background: lightcyan;
-	font: bold 16px/1 "맑은고딕";
-	color: cornflowerblue;
-}
-table {
-	width: 100%;
-	border-top: 2px solid #333;
-	border-bottom: 2px solid #333;
-	th,
-	td {
-		border-bottom: 1px solid #ddd;
-		padding: 10px 30px;
+.join {
+	figure {
+		background: #398ab9;
 	}
-	th {
-		width: 20%;
-		border-right: 1px solid #ddd;
-		text-align: left;
-		font: bold 14px/1 "arial";
-		color: #555;
-		&.btnSet {
-			text-align: center;
-			input[type="reset"],
-			input[type="submit"] {
-				width: 150px;
-				height: 30px;
-				border: 1px solid #555;
+	.success {
+		width: 100%;
+		padding: 20px 20px;
+		text-align: center;
+		background: lightcyan;
+		font: bold 16px/1 "맑은고딕";
+		color: cornflowerblue;
+	}
+	table {
+		width: 100%;
+		border-top: 2px solid #333;
+		border-bottom: 2px solid #333;
+		th,
+		td {
+			border-bottom: 1px solid #ddd;
+			padding: 10px 30px;
+		}
+		th {
+			width: 20%;
+			border-right: 1px solid #ddd;
+			text-align: left;
+			font: bold 14px/1 "arial";
+			color: #1c658c;
+			&.btnSet {
 				text-align: center;
-				margin: 10px;
-				cursor: pointer;
-				transition: 0.3s;
-				&:hover {
-					background: #555;
+				input[type="reset"],
+				input[type="submit"] {
+					width: 150px;
+					height: 30px;
+					border: none;
+					text-align: center;
+					margin: 10px;
+					cursor: pointer;
+					transition: 0.3s;
+					background: #1c658c;
 					color: #fff;
+					&:hover {
+						background: #398ab9;
+						color: #fff;
+					}
 				}
 			}
 		}
-	}
-	td {
-		input[type="text"],
-		input[type="password"],
-		select,
-		textarea {
-			width: 60%;
-			padding: 10px 20px;
-			border: 1px solid #aaa;
-		}
-		textarea {
-			height: 150px;
-		}
-		label {
-			font: 12px/1 "arial";
-			color: #777;
-			margin-right: 5px;
-		}
-		input[type="radio"],
-		input[type="checkbox"] {
-			margin-right: 10px;
-		}
-		.err {
-			font: 11px/1 "맑은 고딕";
-			color: hotpink;
-			display: block;
-			margin: 5px 0px;
+		td {
+			input[type="text"],
+			input[type="password"],
+			select,
+			textarea {
+				width: 60%;
+				padding: 10px 20px;
+				border: 1px solid #aaa;
+			}
+			textarea {
+				height: 150px;
+			}
+			label {
+				font: 12px/1 "arial";
+				color: #777;
+				margin-right: 5px;
+			}
+			input[type="radio"],
+			input[type="checkbox"] {
+				margin-right: 10px;
+			}
+			.err {
+				font: 11px/1 "맑은 고딕";
+				color: hotpink;
+				display: block;
+				margin: 5px 0px;
+			}
 		}
 	}
 }
