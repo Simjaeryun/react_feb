@@ -7,14 +7,15 @@ $mobile: 639px;
 @import "./common/reset";
 @import "./common/layout";
 @import "./common/header";
-@import "./common/side";
+
 @import "./common/footer";
 
 //main
 @import "./main/visual";
 @import "./main/intro";
 @import "./main/news";
-
+@import "./main/side";
+@import "./main/highlight";
 //Sub
 @import "./sub/department";
 @import "./sub/community";

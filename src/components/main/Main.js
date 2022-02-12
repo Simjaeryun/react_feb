@@ -3,6 +3,7 @@ import Visual from './Visual';
 import Intro from './Intro';
 import News from './News';
 import Side from './Side';
+import Highlight from './Highlight';
 export default function Main() {
 
     return (
@@ -10,6 +11,7 @@ export default function Main() {
             <Header type={'main'} />
             <Side />
             <Visual />
+            <Highlight />
             <Intro />
             <News />
         </>
