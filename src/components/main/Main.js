@@ -4,14 +4,16 @@ import Intro from './Intro';
 import News from './News';
 import Side from './Side';
 import Highlight from './Highlight';
+import Videos from './Videos';
 export default function Main() {
 
     return (
         <>
-            <Header type={'main'} />
+            <Header type={'main_header'} />
             <Side />
             <Visual />
             <Highlight />
+            <Videos />
             <Intro />
             <News />
         </>

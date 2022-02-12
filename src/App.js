@@ -26,7 +26,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Header type={"sub"} />
+          <Header type={"sub_header"} />
         </Route>
       </Switch>
 
