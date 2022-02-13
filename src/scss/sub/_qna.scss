@@ -1,21 +1,70 @@
-.community {
+.qna {
 	.inner {
-		section {
-			.inputBox {
-				width: 100%;
-				padding: 50px;
-				margin-bottom: 50px;
-				border: 1px solid #aaa;
+		width: 140rem;
+		margin: 0 auto;
+		h1 {
+			font-size: 40px;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.qna_content {
+			width: 100%;
+			.qna_input {
+				text-align: center;
+				input,
+				textarea {
+					width: 100%;
+					padding: 20px;
+					text-align: center;
+					border: 1px solid #ececec;
+					margin-bottom: 10px;
+				}
+				.qna_btn {
+					width: 100%;
+					margin: 0 auto;
+					display: flex;
+					justify-content: space-between;
+				}
+				button {
+					width: 49%;
+					padding: 20px;
+					border: 1px solid #ececec;
+				}
 			}
 			.showList {
 				width: 100%;
-				padding: 50px;
-				border: 1px solid #aaa;
+				margin-top: 50px;
 				article {
 					width: 100%;
-					padding: 30px;
-					border: 1px solid #bbb;
-					margin-bottom: 20px;
+					text-align: center;
+					margin-bottom: 30px;
+					margin: 0 auto;
+					padding: 20px 0px;
+					border-bottom: 2px solid #ececec;
+					.post {
+						width: 100%;
+						h2 {
+							font-size: 24px;
+							margin-bottom: 10px;
+						}
+						p {
+							font-size: 20px;
+							margin-bottom: 10px;
+						}
+					}
+					.btns {
+						width: 100%;
+						display: flex;
+						justify-content: center;
+						button {
+							width: 30%;
+							margin-right: 10px;
+							border: none;
+							padding: 10px;
+							cursor: pointer;
+							font-weight: bold;
+						}
+					}
 				}
 			}
 		}

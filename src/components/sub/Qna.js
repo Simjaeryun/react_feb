@@ -119,17 +119,18 @@ export default function Qna() {
                         <textarea
                             cols="30"
                             rows="10"
-                            placeholder='본문을 입력하세요'
+                            placeholder='내용을 입력하세요'
                             ref={textarea}
                         >
                         </textarea><br />
+                        <div className="qna_btn">
+                            <button onClick={() => {
+                                input.current.value = '';
+                                textarea.current.value = '';
+                            }}>cancel</button>
 
-                        <button onClick={() => {
-                            input.current.value = '';
-                            textarea.current.value = '';
-                        }}>cancel</button>
-
-                        <button onClick={createPost}>create</button>
+                            <button onClick={createPost}>create</button>
+                        </div>
                     </div>
 
                     <div className="showList" ref={showBox}>
