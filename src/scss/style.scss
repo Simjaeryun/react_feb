@@ -3,6 +3,9 @@
 $tablet: 1179px;
 $mobile: 639px;
 
+//google fonts
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 //Common
 @import "./common/reset";
 @import "./common/layout";
@@ -31,4 +34,5 @@ html {
 
 body {
 	overflow-x: hidden;
+	font-family: "Noto Sans", sans-serif;
 }

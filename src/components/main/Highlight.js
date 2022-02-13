@@ -9,49 +9,49 @@ export default function Highlight() {
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
                     </div>
                     <div className="img_box">
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
                     </div>
                     <div className="img_box">
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
                     </div>
                     <div className="img_box">
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
                     </div>
                     <div className="img_box">
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
                     </div>
                     <div className="img_box">
                         <h2 className="img_title">
                             Lorem ipsum dolor sit.
                         </h2>
-                        <div className="img_txt">
+                        <p className="img_txt">
                             Lorem ipsum, dolor sit amet consectetur adipisicing.
-                        </div>
+                        </p>
 
 
                     </div>

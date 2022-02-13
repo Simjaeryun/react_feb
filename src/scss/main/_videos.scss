@@ -13,7 +13,7 @@
 				border-radius: 10px;
 			}
 			.videos_main_title {
-				font-size: 18px;
+				font-size: 20px;
 				margin-bottom: 20px;
 			}
 			.videos_main_description {
@@ -45,10 +45,11 @@
 					flex-direction: column;
 					justify-content: space-around;
 					.videos_sub_txt-title {
-						font-size: 14px;
+						font-size: 18px;
 					}
 					.videos_sub_txt-description {
 						font-size: 20px;
+						font-weight: bold;
 					}
 				}
 			}

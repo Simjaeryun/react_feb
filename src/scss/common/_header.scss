@@ -13,8 +13,9 @@ header {
 		justify-content: space-between;
 		h1 {
 			a {
-				font: bold 30px/1 "arial";
-				color: #e6007e;
+				font-size: 30px;
+				color: #4a6bd6;
+				font-weight: 700;
 			}
 		}
 		#gnb {
@@ -22,7 +23,7 @@ header {
 			a {
 				display: block;
 				padding: 22px 30px;
-				font: 14px/1 "arial";
+				font-size: 18px;
 				color: #000;
 				transition: 0.5s;
 			}
