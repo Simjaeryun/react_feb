@@ -7,7 +7,7 @@ import Main from "./components/main/Main";
 
 //sub
 import Department from "./components/sub/Department";
-import Community from "./components/sub/Community";
+import Qna from "./components/sub/Qna";
 import Gallery from "./components/sub/Gallery";
 import Youtube from "./components/sub/Youtube";
 import Location from "./components/sub/Location";
@@ -32,7 +32,7 @@ function App() {
 
 
       <Route path="/department" component={Department}></Route>
-      <Route path="/community" component={Community}></Route>
+      <Route path="/qna" component={Qna}></Route>
       <Route path="/gallery" component={Gallery}></Route>
       <Route path="/youtube" component={Youtube}></Route>
       <Route path="/location" component={Location}></Route>

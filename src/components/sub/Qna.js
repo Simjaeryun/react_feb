@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Community() {
+export default function Qna() {
     const main = useRef(null);
     const input = useRef(null);
     const textarea = useRef(null);
@@ -103,14 +103,14 @@ export default function Community() {
     }, [posts]);
 
     return (
-        <main className="content community" ref={main}>
+        <main className="content qna" ref={main}>
             <figure></figure>
 
             <div className="inner">
-                <h1>Community</h1>
+                <h1 className="qna_title">Q&A</h1>
 
-                <section>
-                    <div className='inputBox'>
+                <section className="qna_content">
+                    <div className='qna_input'>
                         <input
                             type="text"
                             placeholder='제목을 입력하세요'
