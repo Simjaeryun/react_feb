@@ -9,15 +9,18 @@ export default function Gallery() {
     const [index, setIndex] = useState(0);
     const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
     const method1 = 'flickr.interestingness.getList';
+    const method2 = 'flickr.photos.search'
     const num = 50;
-    const url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1`;
+    const tags = "ocean"
+    const url1 = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1`;
+    const url2 = `https://www.flickr.com/services/rest/?method=${method2}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1&tags=${tags}`;
 
     useEffect(() => {
         main.current.classList.add('on');
-        getFlicker();
-    }, [url]);
+        getFlicker(url1);
+    }, []);
 
-    const getFlicker = async () => {
+    const getFlicker = async (url) => {
         await axios.get(url).then(json => {
             setItems(json.data.photos.photo);
         })
@@ -31,6 +34,10 @@ export default function Gallery() {
 
                 <div className="inner">
                     <h1>Gallery</h1>
+                    <button onClick={() => {
+                        frame.current.classList.remove("on");
+                        getFlicker(url2)
+                    }}>검색어보기</button>
                     <section ref={frame}>
                         {items.map((item, idx) => {
                             return (
