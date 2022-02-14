@@ -5,6 +5,8 @@ import News from './News';
 import Side from './Side';
 import Highlight from './Highlight';
 import Videos from './Videos';
+import Info from './info';
+import Btns from './Btns';
 export default function Main() {
 
     return (
@@ -16,6 +18,8 @@ export default function Main() {
             <Videos />
             <Intro />
             <News />
+            <Info />
+            <Btns />
         </>
     )
 }
