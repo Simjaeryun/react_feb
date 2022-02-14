@@ -2,23 +2,27 @@ import axios from 'axios';
 import { useEffect, useRef, useState } from "react";
 
 export default function Gallery() {
-    let main = useRef(null);
+    const main = useRef(null);
+    const frame = useRef(null)
     const [items, setItems] = useState([]);
     const [isPop, setIsPop] = useState(false);
     const [index, setIndex] = useState(0);
     const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
     const method1 = 'flickr.interestingness.getList';
-    const num = 5;
+    const num = 50;
     const url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1`;
 
     useEffect(() => {
         main.current.classList.add('on');
+        getFlicker();
+    }, [url]);
 
-        axios.get(url).then(json => {
-            console.log(json.data.photos.photo);
+    const getFlicker = async () => {
+        await axios.get(url).then(json => {
             setItems(json.data.photos.photo);
         })
-    }, [url]);
+        frame.current.classList.add("on");
+    }
 
     return (
         <>
@@ -27,7 +31,7 @@ export default function Gallery() {
 
                 <div className="inner">
                     <h1>Gallery</h1>
-                    <section>
+                    <section ref={frame}>
                         {items.map((item, idx) => {
                             return (
                                 <article key={idx}>
