@@ -1,6 +1,6 @@
 export default function Highlight() {
     return (
-        <section className="highlight">
+        <section className="highlight myScroll">
             <div className="inner">
                 <h1>HIGHLIGHT</h1>
                 <div className="img_container">

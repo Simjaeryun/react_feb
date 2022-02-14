@@ -1,6 +1,6 @@
 export default function Visual() {
     return (
-        <figure className="visual">
+        <figure className="visual myScroll">
             <div className="inner">
                 <div className="img_container">
                     <div className="img_box">
