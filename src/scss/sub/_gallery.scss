@@ -1,35 +1,55 @@
 .gallery {
+	background: #efefef;
 	.inner {
+		.loading {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 		> section {
-			display: flex;
-			flex-wrap: wrap;
 			transform: translateY(200px);
 			opacity: 0;
 			transition: 1s;
+
 			&.on {
 				transform: translateY(0px);
 				opacity: 1;
 			}
+
+			&::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+
 			article {
 				width: 20%;
+				float: left;
 				padding: 10px;
-				.inner {
+
+				> .inner {
 					width: 100%;
+					height: 100%;
 					background: #fff;
 					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 					padding: 10px;
-				}
-				.pic {
-					width: 100%;
-					margin-bottom: 10px;
-					cursor: pointer;
-					img {
+
+					.pic {
 						width: 100%;
+						margin-bottom: 10px;
+						cursor: pointer;
+
+						img {
+							width: 100%;
+						}
 					}
-				}
-				h2 {
-					font: normal 14px/1.2 "arial";
-					color: #777;
+
+					h2 {
+						font: normal 14px/1.2 "arial";
+						color: #777;
+						margin-bottom: 20px;
+					}
 				}
 			}
 		}
@@ -38,20 +58,17 @@
 
 .popup {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background: rgba(0, 0, 0, 0.9);
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	padding: 5vw;
-	h1 {
-		color: #fff;
-		margin-bottom: 10px;
-	}
+
 	img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: contain;
 	}
 
 	span {
@@ -61,5 +78,35 @@
 		top: 4vh;
 		right: 5vw;
 		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	.gallery {
+		.item {
+			width: 25% !important;
+		}
+	}
+}
+
+@media screen and (max-width: 899px) {
+	.gallery {
+		.item {
+			width: 33.333% !important;
+		}
+	}
+}
+@media screen and (max-width: 739px) {
+	.gallery {
+		.item {
+			width: 50% !important;
+		}
+	}
+}
+@media screen and (max-width: 479px) {
+	.gallery {
+		.item {
+			width: 100% !important;
+		}
 	}
 }
