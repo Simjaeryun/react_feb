@@ -15,6 +15,10 @@ import Join from "./components/sub/Join";
 import { Route, Switch } from 'react-router-dom';
 
 import './scss/style.scss'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 
