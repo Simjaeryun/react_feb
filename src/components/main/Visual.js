@@ -1,6 +1,6 @@
 export default function Visual() {
     return (
-        <figure className="visual myScroll">
+        <section className="visual">
             <div className="inner">
                 <div className="img_container">
                     <div className="img_box">
@@ -8,6 +8,6 @@ export default function Visual() {
                     </div>
                 </div>
             </div>
-        </figure >
+        </section >
     )
 }

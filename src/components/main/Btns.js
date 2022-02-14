@@ -1,4 +1,5 @@
 export default function Btns(props) {
+    console.log(props)
     return (
         <ul id="btns" >
             <li onClick={() => {
