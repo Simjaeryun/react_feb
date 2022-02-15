@@ -25,23 +25,34 @@ export default function Videos() {
             dispatch(setYoutube(json.data.items));
         });
     }
-
     return (
         <section className="videos">
             <div className="inner">
                 <div className="videos_main">
                     {/* 문제의 부분  */}
-                    <div className="videos_main_video">
-                        <img
-                            src={vidData[4].snippet.thumbnails.standard.url} alt=""
-                        />
-                    </div>
-                    <h1 className="videos_main_title">
-                        {vidData[4].snippet.title}
-                    </h1>
-                    <p className="videos_main_description">
-                        {vidData[4].snippet.description}
-                    </p>
+                    {vidData.map((vid, idx) => {
+                        let tit = vidData[idx].snippet.title;
+                        let tit_len = tit.length;
+                        let desc = vidData[idx].snippet.description;
+                        let desc_len = desc.length;
+                        if (idx === 4)
+                            return (
+                                <>
+                                    <div className="videos_main_video">
+                                        <img
+                                            src={vidData[idx].snippet.thumbnails.standard.url} alt=""
+                                        />
+                                    </div>
+                                    <h1 className="videos_main_title">
+                                        {tit_len > 40 ? tit.substr(0, 40) + ".." : tit}
+                                    </h1>
+                                    <p className="videos_main_description">
+                                        {desc_len > 300 ? desc.substr(0, 300) + "..." : desc}
+                                    </p>
+                                </>
+                            )
+                    })}
+
                     {/* 문제의 부분 끝 */}
                 </div>
                 <ul className="videos_sub">
@@ -73,4 +84,5 @@ export default function Videos() {
             </div>
         </section>
     )
+
 } 
