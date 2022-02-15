@@ -27,16 +27,16 @@ export default function Videos() {
     }
     return (
         <section className="videos">
-            <div className="inner">
+            <div className="inner" >
                 <div className="videos_main">
-                    {/* 문제의 부분  */}
                     {vidData.map((vid, idx) => {
                         let tit = vidData[idx].snippet.title;
                         let tit_len = tit.length;
                         let desc = vidData[idx].snippet.description;
                         let desc_len = desc.length;
-                        if (idx === 4)
-                            return (
+                        return (
+                            idx === 4
+                                ?
                                 <>
                                     <div className="videos_main_video">
                                         <img
@@ -50,10 +50,9 @@ export default function Videos() {
                                         {desc_len > 300 ? desc.substr(0, 300) + "..." : desc}
                                     </p>
                                 </>
-                            )
+                                : null
+                        )
                     })}
-
-                    {/* 문제의 부분 끝 */}
                 </div>
                 <ul className="videos_sub">
                     {vidData.map((vid, idx) => {
@@ -62,8 +61,10 @@ export default function Videos() {
                         let desc = vid.snippet.description;
                         let desc_len = desc.length;
 
-                        if (idx < 4)
-                            return (
+
+                        return (
+                            idx < 4
+                                ?
                                 <li className="videos_sub_card" key={idx}>
                                     <div className="videos_sub_video">
                                         <img src={vid.snippet.thumbnails.standard.url} alt="" />
@@ -77,7 +78,8 @@ export default function Videos() {
                                         </div>
                                     </div>
                                 </li>
-                            )
+                                : null
+                        )
                     })}
 
                 </ul>

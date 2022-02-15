@@ -1,25 +1,15 @@
-import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-
+import { useSelector } from "react-redux";
 
 export default function Youtube() {
-    const key = "AIzaSyDTqpCGvBZz_l-UfWUkSY-UWyzxgO58z2I";
-    const playListId = "PLsGbxh85lJXJyWJZ07m7tRiDPqQJNAlZL";
-    const num = 5;
-    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResult=${num}`;
-    const [items, setItems] = useState([]);
     const [isPop, setIsPop] = useState(false);
     const [index, setIndex] = useState(0);
     const main = useRef(null);
+    const vidData = useSelector(state => state.youtubeReducer.youtube);
 
     useEffect(() => {
         main.current.classList.add('on');
-
-        axios.get(url).then(json => {
-            console.log(json.data.items);
-            setItems(json.data.items);
-        })
-    }, [url]);
+    }, []);
 
     return (
         <>
@@ -29,7 +19,7 @@ export default function Youtube() {
                 <div className="inner">
                     <h1>Youtube</h1>
                     <section>
-                        {items.map((item, idx) => {
+                        {vidData.map((item, idx) => {
                             let tit = item.snippet.title;
                             let tit_len = tit.length;
 
@@ -68,7 +58,7 @@ export default function Youtube() {
             <aside className="popup">
                 <iframe
                     title="youtube"
-                    src={"https://www.youtube.com/embed/" + items[index].snippet.resourceId.videoId}
+                    src={"https://www.youtube.com/embed/" + vidData[index].snippet.resourceId.videoId}
                     width='100%'
                     height='100%'
                     allowFullScreen

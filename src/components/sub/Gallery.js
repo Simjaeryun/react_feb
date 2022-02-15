@@ -74,7 +74,7 @@ export default function Gallery() {
             return;
         }
         if (enableClick) {
-            setIsInterest(false)
+            showInterest(false)
             setEnableClick(false);
             setLoading(true);
             frame.current.classList.remove('on');

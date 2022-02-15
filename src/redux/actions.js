@@ -11,3 +11,10 @@ export const setYoutube = data => {
         payload: data
     }
 }
+
+export const setFlicker = data => {
+    return {
+        type: 'SET_FLICKER',
+        payload: data
+    }
+}

@@ -8,6 +8,7 @@ import Videos from './Videos';
 import Info from './info';
 
 import { useRef, } from 'react';
+import Photos from './Photos';
 
 
 
@@ -22,6 +23,7 @@ export default function Main() {
             <Visual />
             <Highlight />
             <Videos />
+            <Photos />
             <Intro />
             <News />
             <Info />

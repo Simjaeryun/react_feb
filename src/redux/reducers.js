@@ -41,10 +41,23 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
             return state;
     }
 }
+
+const flickerReducer = (state = { flicker: [] }, action) => {
+    switch (action.type) {
+        case 'SET_FLICKER':
+            return { ...state, flicker: action.payload }
+        default:
+            return state;
+    }
+
+}
+
+
 //여러개의 reducer들을 하나로 합쳐서 반환
 const reducers = combineReducers({
     departmentReducer,
     youtubeReducer,
+    flickerReducer,
 })
 
 export default reducers;
