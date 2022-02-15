@@ -8,20 +8,24 @@ export default function Photos() {
 
     const photoData = useSelector(state => state.flickerReducer.flicker);
     const dispatch = useDispatch();
-    const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
-    const method1 = 'flickr.interestingness.getList';
 
-    let url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=4&api_key=${api_key}&format=json&nojsoncallback=1`;
+    const getFlickr = async () => {
+        const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
+        const method = 'flickr.interestingness.getList';
+        const num = 200;
+        let url = `https://www.flickr.com/services/rest/?method=${method}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1`;
 
-    const fetchFlicker = async () => {
         await axios.get(url).then(json => {
             dispatch(setFlicker(json.data.photos.photo))
             console.log(photoData)
         })
+
     }
 
+
+
     useEffect(() => {
-        fetchFlicker()
+        getFlickr()
     }, [])
 
     return (
@@ -44,9 +48,12 @@ export default function Photos() {
                     <div className="photos_img_box">
                         {photoData.map((photo, idx) => {
                             return (
-                                <div className="photos_img" key={idx}>
-                                    <img src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`} alt="" />
-                                </div>
+                                idx < 4
+                                    ?
+                                    <div className="photos_img" key={idx}>
+                                        <img src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`} alt="" />
+                                    </div>
+                                    : null
                             )
                         })}
 

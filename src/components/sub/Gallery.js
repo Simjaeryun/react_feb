@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from 'react-redux';
 import Masonry from 'react-masonry-component';
 
 export default function Gallery() {
@@ -7,7 +8,10 @@ export default function Gallery() {
     const frame = useRef(null);
     const input = useRef(null);
 
-    const [items, setItems] = useState([]);
+    //처름 서브 gallery 컴포넌트 호출시 이미 main에서 데이터가 적용된 flickrReducer데이터 가져오기
+    const initPic = useSelector(state => state.flickerReducer.flicker);
+
+    const [items, setItems] = useState(initPic);
     const [isPop, setIsPop] = useState(false);
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(true);
