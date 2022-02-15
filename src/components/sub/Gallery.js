@@ -12,6 +12,7 @@ export default function Gallery() {
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [enableClick, setEnableClick] = useState(true);
+    const [isInterest, setIsInterest] = useState(true);
 
     const path = process.env.PUBLIC_URL;
 
@@ -53,7 +54,9 @@ export default function Gallery() {
     }
 
     const showInterest = () => {
-        if (enableClick) {
+
+        if (enableClick && !isInterest) {
+            setIsInterest(false);
             setEnableClick(false);
             setLoading(true);
             frame.current.classList.remove('on');
@@ -71,6 +74,7 @@ export default function Gallery() {
             return;
         }
         if (enableClick) {
+            setIsInterest(false)
             setEnableClick(false);
             setLoading(true);
             frame.current.classList.remove('on');

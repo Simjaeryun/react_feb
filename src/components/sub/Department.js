@@ -15,7 +15,7 @@ export default function Department() {
                 setMembers(json.data.data)
             });
 
-    }, [])
+    }, [url])
     return (
         <main className="content department" ref={main}>
             <figure>
