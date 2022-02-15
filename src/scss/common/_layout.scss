@@ -3,11 +3,17 @@ figure {
 	width: 100%;
 	.inner {
 		padding: 0 12rem 0 22rem;
+		padding-top: 100px;
+		transform: translateY(100px);
+		transition: 1s;
 	}
 }
 
 .content {
 	min-height: 764px;
+	> figure {
+		height: 200px;
+	}
 	.inner {
 		padding: 0 12rem 0 22rem;
 		h1 {
