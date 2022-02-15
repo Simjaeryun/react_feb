@@ -13,30 +13,36 @@ export default function Videos() {
     const num = 5;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResult=${num}`;
 
+
+    useEffect(() => {
+        fetchYoutube();
+        console.log(vidData)
+    }, []);
+
     //axios로 받아온 youtube data를 dispatch로 reducer에 전달 
     const fetchYoutube = async () => {
         await axios.get(url).then(json => {
             dispatch(setYoutube(json.data.items));
-            console.log(json.data.items)
         });
     }
-
-    useEffect(() => {
-        fetchYoutube();
-        console.log(vidData);
-    }, []);
 
     return (
         <section className="videos">
             <div className="inner">
                 <div className="videos_main">
+                    {/* 문제의 부분  */}
                     <div className="videos_main_video">
-                        s
+                        <img
+                            src={vidData[4].snippet.thumbnails.standard.url} alt=""
+                        />
                     </div>
-                    <h1 className="videos_main_title">mainvideo</h1>
+                    <h1 className="videos_main_title">
+                        {vidData[4].snippet.title}
+                    </h1>
                     <p className="videos_main_description">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius illum omnis velit.
+                        {vidData[4].snippet.description}
                     </p>
+                    {/* 문제의 부분 끝 */}
                 </div>
                 <ul className="videos_sub">
                     {vidData.map((vid, idx) => {
