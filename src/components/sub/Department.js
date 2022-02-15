@@ -1,21 +1,43 @@
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setMembers } from "../../redux/actions";
 
 
 export default function Department() {
     const main = useRef(null);
     const members = useSelector(state => state.departmentReducer.members)
-    console.log(members)
+    const dispatch = useDispatch();
+    const newMember = [
+        {
+            "name": "Julia",
+            "position": "CEO",
+            "pic": "member4.jpg"
+        },
+        {
+            "name": "Paul",
+            "position": "Vice President",
+            "pic": "member5.jpg"
+        },
+        {
+            "name": "Peter",
+            "position": "Engineer",
+            "pic": "member6.jpg"
+        }]
     const path = process.env.PUBLIC_URL;
+
     useEffect(() => {
         main.current.classList.add("on");
     }, [])
+
     return (
         <main className="content department" ref={main}>
             <figure>
             </figure>
             <div className="inner">
                 <h1>Department</h1>
+                <button onClick={() => {
+                    dispatch(setMembers(newMember))
+                }} >멤버변경</button>
                 <section>
                     {members.map((member, idx) => {
                         return (
