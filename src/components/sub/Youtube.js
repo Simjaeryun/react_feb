@@ -54,6 +54,7 @@ export default function Youtube() {
             document.body.style.overflow = "hidden";
             return () => document.body.style.overflow = "auto";
         })
+
         return (
             <aside className="popup">
                 <iframe
