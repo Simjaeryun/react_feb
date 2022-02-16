@@ -7,22 +7,47 @@
 		height: 100%;
 		display: flex;
 		position: relative;
+		.visual_btns {
+			position: absolute;
+			z-index: 2;
+			right: 180px;
+			top: 100px;
+			.prev,
+			.next {
+				width: 80px;
+				height: 80px;
+				background: #000;
+				color: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 25px;
+				cursor: pointer;
+			}
+		}
+
 		.img_container {
-			background: cornflowerblue;
-			width: 100%;
 			height: 700px;
 			border-radius: 5px;
+			position: relative;
+
 			.img_box {
-				width: 100%;
+				background-color: cornflowerblue;
 				height: 100%;
 				font-size: 50px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 			}
+			> .swiper-button-prev {
+				left: 99%;
+			}
 		}
 		.txt {
 			color: #fff;
 		}
 	}
+}
+
+.swiper-button-next {
 }
