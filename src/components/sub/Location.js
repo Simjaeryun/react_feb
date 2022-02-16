@@ -67,32 +67,32 @@ export default function Location() {
         window.addEventListener('resize', mapSet);
 
         return () => window.removeEventListener('resize', mapSet);
-    }, [index]);
+    }, []);
 
     return (
         <main className="content location" ref={main}>
-            <figure></figure>
-
             <div className="inner">
                 <h1>Location</h1>
                 <section>
                     <div id="map" ref={container}></div>
+                    <div className="btns">
+                        <nav className='traffic'>
+                            <button onClick={() => {
+                                map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                            }}>교통정보 보기</button>
 
-                    <nav className='traffic'>
-                        <button onClick={() => {
-                            map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                        }}>교통정보 보기</button>
+                            <button onClick={() => {
+                                map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                            }}>교통정보 끄기</button>
+                        </nav>
 
-                        <button onClick={() => {
-                            map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                        }}>교통정보 끄기</button>
-                    </nav>
+                        <nav className="branch">
+                            {mapInfo.map((data, idx) => {
+                                return <button key={idx} onClick={() => setIndex(idx)}>{data.title}</button>
+                            })}
+                        </nav>
+                    </div>
 
-                    <nav className="branch">
-                        {mapInfo.map((data, idx) => {
-                            return <button key={idx} onClick={() => setIndex(idx)}>{data.title}</button>
-                        })}
-                    </nav>
                 </section>
             </div>
         </main>

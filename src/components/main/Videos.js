@@ -9,8 +9,8 @@ export default function Videos() {
     const dispatch = useDispatch();
 
     const key = "AIzaSyDTqpCGvBZz_l-UfWUkSY-UWyzxgO58z2I";
-    const playListId = "PLsGbxh85lJXJyWJZ07m7tRiDPqQJNAlZL";
-    const num = 5;
+    const playListId = "PLsGbxh85lJXKe7TgZX4e2nqkewL1urGyf";
+    const num = 10;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResult=${num}`;
 
     const [isPop, setIsPop] = useState(false);
@@ -25,6 +25,7 @@ export default function Videos() {
     const fetchYoutube = async () => {
         await axios.get(url).then(json => {
             dispatch(setYoutube(json.data.items));
+            console.log(json.data.items)
         });
     }
     return (
@@ -46,7 +47,7 @@ export default function Videos() {
                                             setIndex(idx);
                                         }}>
                                             <img
-                                                src={vidData[idx].snippet.thumbnails.standard.url} alt=""
+                                                src={vidData[idx].snippet.thumbnails.maxres.url} alt=""
                                             />
                                         </div>
                                         <h1 className="videos_main_title">
