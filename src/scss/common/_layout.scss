@@ -4,6 +4,17 @@ figure {
 	margin-bottom: 200px;
 	.inner {
 		padding: 0 22rem 0 32rem;
+	}
+}
+
+main {
+	&.on {
+		.inner {
+			transform: translateY(0px);
+			transition: 1s;
+		}
+	}
+	.inner {
 		transform: translateY(100px);
 		transition: 1s;
 	}

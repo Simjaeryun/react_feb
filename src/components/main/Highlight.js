@@ -4,7 +4,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 export default function Highlight() {
 
     return (
-        <section className="highlight myScroll">
+        <section className="highlight">
             <div className="inner">
                 <h1>HIGHLIGHT</h1>
                 <div>

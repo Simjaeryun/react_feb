@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFlicker } from '../../redux/actions';
 import Masonry from 'react-masonry-component';
 
 export default function Gallery() {
@@ -9,9 +10,8 @@ export default function Gallery() {
     const input = useRef(null);
 
     //처름 서브 gallery 컴포넌트 호출시 이미 main에서 데이터가 적용된 flickrReducer데이터 가져오기
-    const initPic = useSelector(state => state.flickerReducer.flicker);
+    const photoData = useSelector(state => state.flickerReducer.flicker);
 
-    const [items, setItems] = useState(initPic);
     const [isPop, setIsPop] = useState(false);
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -19,6 +19,7 @@ export default function Gallery() {
     const [isInterest, setIsInterest] = useState(true);
 
     const path = process.env.PUBLIC_URL;
+    const dispatch = useDispatch();
 
     const masonryOptions = {
         fitWidth: false,
@@ -46,7 +47,7 @@ export default function Gallery() {
                 alert("해당 검색어의 이미지가 없습니다.")
                 return;
             }
-            setItems(json.data.photos.photo);
+            dispatch(setFlicker(json.data.photos.photo))
         })
         setTimeout(() => {
             frame.current.classList.add('on');
@@ -72,7 +73,7 @@ export default function Gallery() {
     }
     const showSearch = () => {
         const result = input.current.value.trim();
-        console.log(items);
+
         if (result === "") {
             alert("검색어를 입력하세요")
             return;
@@ -96,7 +97,6 @@ export default function Gallery() {
             showSearch();
         }
     }
-
 
     useEffect(() => {
         main.current.classList.add('on');
@@ -123,7 +123,7 @@ export default function Gallery() {
                             elementType={'div'}
                             options={masonryOptions}
                         >
-                            {items.map((item, idx) => {
+                            {photoData.map((item, idx) => {
                                 return (
                                     <article key={idx} className='item'>
                                         <div className="inner">
@@ -156,8 +156,8 @@ export default function Gallery() {
 
         return (
             <aside className="popup">
-                <h1>{items[index].title}</h1>
-                <img src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`} alt="flickr에서 가져온 이미지" />
+                <h1>{photoData[index].title}</h1>
+                <img src={`https://live.staticflickr.com/${photoData[index].server}/${photoData[index].id}_${photoData[index].secret}_b.jpg`} alt="flickr에서 가져온 이미지" />
                 <span onClick={() => {
                     setIsPop(false);
                 }}>close</span>

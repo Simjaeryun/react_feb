@@ -1,16 +1,16 @@
 .visual {
 	width: 100%;
 	position: relative;
-	margin-top: 30px;
-	margin-bottom: 40px;
+	margin-top: 50px;
 	.inner {
+		width: 100%;
 		height: 100%;
 		display: flex;
 		position: relative;
 		.img_container {
 			background: cornflowerblue;
 			width: 100%;
-			height: 70rem;
+			height: 700px;
 			border-radius: 5px;
 			.img_box {
 				width: 100%;
@@ -23,15 +23,6 @@
 		}
 		.txt {
 			color: #fff;
-		}
-	}
-}
-
-@media screen and (max-width: $tablet) {
-	figure {
-		.inner {
-			width: 100%;
-			padding: 20px 6vw;
 		}
 	}
 }

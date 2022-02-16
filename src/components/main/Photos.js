@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { setFlicker } from "../../redux/actions"
 
 export default function Photos() {
@@ -17,15 +16,10 @@ export default function Photos() {
 
         await axios.get(url).then(json => {
             dispatch(setFlicker(json.data.photos.photo))
-            console.log(photoData)
         })
-
     }
-
-
-
     useEffect(() => {
-        getFlickr()
+        if (photoData.length === 0) getFlickr();
     }, [])
 
     return (
