@@ -41,7 +41,7 @@ export default function Videos() {
                             return (
                                 idx === 4
                                     ?
-                                    <>
+                                    <div key={idx}>
                                         <div className="videos_main_video" onClick={() => {
                                             setIsPop(true);
                                             setIndex(idx);
@@ -56,7 +56,7 @@ export default function Videos() {
                                         <p className="videos_main_description">
                                             {desc_len > 300 ? desc.substr(0, 300) + "..." : desc}
                                         </p>
-                                    </>
+                                    </div>
                                     : null
                             )
                         })}

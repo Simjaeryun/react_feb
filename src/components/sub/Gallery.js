@@ -49,13 +49,12 @@ export default function Gallery() {
             }
             dispatch(setFlicker(json.data.photos.photo))
         })
-        setTimeout(() => {
-            frame.current.classList.add('on');
-            setLoading(false);
-            setTimeout(() => {
-                setEnableClick(true);
-            }, 1000)
-        }, 1000)
+
+        frame.current.classList.add('on');
+        setLoading(false);
+
+        setEnableClick(true);
+
     }
 
     const showInterest = () => {
