@@ -19,6 +19,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Side from "./components/main/Side";
 
 
 
@@ -31,6 +32,7 @@ function App() {
 
         <Route path="/">
           <Header type={"sub_header"} />
+          <Side />
         </Route>
       </Switch>
 

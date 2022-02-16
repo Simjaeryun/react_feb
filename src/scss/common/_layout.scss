@@ -22,15 +22,12 @@ main {
 
 .content {
 	min-height: 764px;
-	> figure {
-		height: 200px;
-	}
 	.inner {
-		padding: 0 22rem 0 32rem;
+		padding: 50px 22rem 0 32rem;
 		h1 {
-			font-size: 40px;
-			margin-bottom: 30px;
-			font-family: "Black Han Sans", sans-serif;
+			margin-bottom: 150px;
+			font-size: 60px;
+			font-family: "Archivo Black", sans-serif;
 		}
 	}
 }

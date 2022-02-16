@@ -109,15 +109,18 @@ export default function Gallery() {
     return (
         <>
             <main className="content gallery" ref={main}>
-                <figure></figure>
-
                 <div className="inner">
-                    <h1 onClick={showInterest}>Gallery</h1>
-                    <div className="seachBox">
-                        <input type="text" ref={input} onKeyUp={handleKeyUp} />
+                    <h1 onClick={showInterest}>PHOTO<br />GALLERY</h1>
+                    <div className="searchBox">
+                        <input
+                            type="text"
+                            ref={input}
+                            onKeyUp={handleKeyUp}
+                            placeholder="Please enter your search term"
+                        />
                         <button onClick={showSearch}>Search</button>
+                        {loading ? <img alt="loading 움직이는 이미지" className='loading' src={path + '/img/loading.gif'} /> : null}
                     </div>
-                    {loading ? <img alt="loading 움직이는 이미지" className='loading' src={path + '/img/loading.gif'} /> : null}
                     <section ref={frame}>
                         <Masonry
                             elementType={'div'}
@@ -134,7 +137,6 @@ export default function Gallery() {
                                                 <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt="Flickr에서 가져온 이미지" />
                                             </div>
 
-                                            <h2>{item.title}</h2>
                                         </div>
                                     </article>
                                 )
