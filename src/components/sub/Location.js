@@ -109,8 +109,6 @@ export default function Location() {
                                             el.classList.remove("on")
                                         }
                                         e.target.classList.add("on")
-
-
                                     }}> {data.title}</button>
                             })}
                         </nav>
