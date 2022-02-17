@@ -33,17 +33,21 @@ export default function Youtube() {
                         >
                             {vidData.map((item, idx) => {
                                 return (
-                                    <SwiperSlide key={idx} className="hot_yotube_content">
-                                        <div className="pic" onClick={(e) => {
-                                            setIsPop(true);
-                                            setIndex(idx);
-                                        }}>
-                                            <img src={item.snippet.thumbnails.maxres.url} alt="" />
-                                        </div>
-                                    </SwiperSlide>
+                                    idx > 5
+                                        ?
+                                        <SwiperSlide key={idx} className="hot_yotube_content">
+                                            <div className="pic" onClick={(e) => {
+                                                setIsPop(true);
+                                                setIndex(idx);
+                                            }}>
+                                                <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                            </div>
+                                        </SwiperSlide>
+                                        : null
                                 )
                             })}
                         </Swiper>
+                        <h2 className="youtube_content_title">All Videos</h2>
                         {vidData.map((item, idx) => {
                             let tit = item.snippet.title;
                             let tit_len = tit.length;

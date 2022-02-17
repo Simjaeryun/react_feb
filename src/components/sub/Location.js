@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Location() {
-    let main = useRef(null);
+    const main = useRef(null);
     const { kakao } = window;
     const container = useRef(null);
     const [map, setMap] = useState(null);
@@ -67,7 +67,7 @@ export default function Location() {
         window.addEventListener('resize', mapSet);
 
         return () => window.removeEventListener('resize', mapSet);
-    }, []);
+    }, [index]);
 
     return (
         <main className="content location" ref={main}>
@@ -88,13 +88,14 @@ export default function Location() {
 
                         <nav className="branch">
                             {mapInfo.map((data, idx) => {
-                                return <button key={idx} onClick={() => setIndex(idx)}>{data.title}</button>
+                                return <button key={idx} onClick={() => setIndex(idx)
+                                }> {data.title}</button>
                             })}
                         </nav>
                     </div>
 
                 </section>
-            </div>
-        </main>
+            </div >
+        </main >
     )
 }
