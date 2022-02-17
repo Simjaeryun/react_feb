@@ -8,7 +8,7 @@ export default function Location() {
     const container = useRef(null);
     const [map, setMap] = useState(null);
     const [index, setIndex] = useState(0);
-
+    const [click, setClick] = useState(false);
     const path = process.env.PUBLIC_URL;
     const info = [
         {
@@ -85,6 +85,7 @@ export default function Location() {
         }
     }
 
+
     return (
         <main className="content location" ref={main}>
             <div className="inner">
@@ -94,8 +95,6 @@ export default function Location() {
                     <div className="btns">
                         <nav className='traffic'>
                             <button onClick={handleTrafficClick} ref={traffic}>교통정보 보기</button>
-
-
                         </nav>
 
                         <nav className="branch">
@@ -105,7 +104,13 @@ export default function Location() {
                                     key={idx}
                                     onClick={(e) => {
                                         setIndex(idx)
-                                        console.log(e.target.parentNode.childNodes)
+                                        const a = Array.from(e.target.parentNode.childNodes)
+                                        for (const el of a) {
+                                            el.classList.remove("on")
+                                        }
+                                        e.target.classList.add("on")
+
+
                                     }}> {data.title}</button>
                             })}
                         </nav>
