@@ -22,12 +22,10 @@ export default function Header(props) {
                     <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
                 </div>
             </header>
-            <nav className={isOn ? 'on' : ''}>
-                <Gnb />
-            </nav>
         </>
     )
 }
+
 
 function Gnb() {
     const active = { color: "aqua" };
