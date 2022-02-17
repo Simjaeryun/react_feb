@@ -14,7 +14,7 @@ header {
 		h1 {
 			a {
 				font-size: 30px;
-				color: #4a6bd6;
+				color: black;
 				font-weight: 700;
 			}
 		}
@@ -39,7 +39,7 @@ header {
 		}
 	}
 	&.sub_header {
-		position: absolute;
+		position: fixed;
 		background: rgba(0, 0, 0, 0.3);
 		top: 0;
 		left: 0;

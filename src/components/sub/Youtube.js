@@ -41,12 +41,14 @@ export default function Youtube() {
                                     idx > 5
                                         ?
                                         <SwiperSlide key={idx} className="hot_yotube_content">
-                                            <div className="pic" onClick={(e) => {
-                                                setIsPop(true);
-                                                setIndex(idx);
-                                            }}>
-                                                <img src={item.snippet.thumbnails.maxres.url} alt="" />
-                                            </div>
+                                            <img
+                                                src={item.snippet.thumbnails.maxres.url}
+                                                alt=""
+                                                onClick={(e) => {
+                                                    setIsPop(true);
+                                                    setIndex(idx);
+                                                }}
+                                            />
                                         </SwiperSlide>
                                         : null
                                 )
