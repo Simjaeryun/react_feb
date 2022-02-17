@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-export default function Highlight({ scrolled }) {
+export default function Highlight() {
 
     return (
         <section className="highlight myScroll">
             <div className="inner">
-                <h1 style={{ transform: `translateX(${scrolled / 7}px)` }}>HIGHLIGHT</h1>
+                <h1>HIGHLIGHT</h1>
                 <div>
                     <Swiper
                         className="img_container"
