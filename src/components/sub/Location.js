@@ -2,28 +2,31 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Location() {
     const main = useRef(null);
+    const traffic = useRef(null);
+    const branch = useRef([]);
     const { kakao } = window;
     const container = useRef(null);
     const [map, setMap] = useState(null);
     const [index, setIndex] = useState(0);
+
     const path = process.env.PUBLIC_URL;
     const info = [
         {
-            title: "본점",
+            title: "강남",
             latlng: new kakao.maps.LatLng(37.50711796614849, 126.7564159502457),
             imgSrc: path + '/img/marker1.png',
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
         },
         {
-            title: "지점1",
+            title: "제주도",
             latlng: new kakao.maps.LatLng(33.450701, 126.570667),
             imgSrc: path + '/img/marker2.png',
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
         },
         {
-            title: "지점2",
+            title: "부산",
             latlng: new kakao.maps.LatLng(37.557527, 126.9222836),
             imgSrc: path + '/img/marker3.png',
             imgSize: new kakao.maps.Size(232, 99),
@@ -69,6 +72,19 @@ export default function Location() {
         return () => window.removeEventListener('resize', mapSet);
     }, [index]);
 
+    const handleTrafficClick = () => {
+        if (!traffic.current.classList.contains("on")) {
+            map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            traffic.current.innerText = "교통정보 끄기"
+            traffic.current.classList.add("on")
+        }
+        else {
+            map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            traffic.current.innerText = "교통정보 보기"
+            traffic.current.classList.remove("on")
+        }
+    }
+
     return (
         <main className="content location" ref={main}>
             <div className="inner">
@@ -77,19 +93,20 @@ export default function Location() {
                     <div id="map" ref={container}></div>
                     <div className="btns">
                         <nav className='traffic'>
-                            <button onClick={() => {
-                                map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                            }}>교통정보 보기</button>
+                            <button onClick={handleTrafficClick} ref={traffic}>교통정보 보기</button>
 
-                            <button onClick={() => {
-                                map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                            }}>교통정보 끄기</button>
+
                         </nav>
 
                         <nav className="branch">
                             {mapInfo.map((data, idx) => {
-                                return <button key={idx} onClick={() => setIndex(idx)
-                                }> {data.title}</button>
+                                return <button
+                                    ref={branch}
+                                    key={idx}
+                                    onClick={(e) => {
+                                        setIndex(idx)
+                                        console.log(e.target.parentNode.childNodes)
+                                    }}> {data.title}</button>
                             })}
                         </nav>
                     </div>
