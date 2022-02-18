@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { setMembers } from "../../redux/actions";
 
 
-export default function Department() {
+export default function About() {
     const main = useRef(null);
-    const members = useSelector(state => state.departmentReducer.members)
+    const members = useSelector(state => state.aboutReducer.members)
     const dispatch = useDispatch();
     const newMember = [
         {
@@ -30,11 +30,13 @@ export default function Department() {
     }, [])
 
     return (
-        <main className="content department" ref={main}>
+        <main className="content about" ref={main}>
             <figure>
+                <img src={`${path}/img/about.jpg`} alt="" />
+                <h1>ABOUT</h1>
             </figure>
             <div className="inner">
-                <h1>Department</h1>
+
                 <button onClick={() => {
                     dispatch(setMembers(newMember))
                 }} >멤버변경</button>

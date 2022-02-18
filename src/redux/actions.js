@@ -1,6 +1,6 @@
 export const setMembers = member => {
     return {
-        type: "SET_MEMBERS",
+        type: "SET_Members",
         payload: member
     }
 }

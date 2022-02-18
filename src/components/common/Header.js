@@ -31,7 +31,7 @@ function Gnb() {
     const active = { color: "aqua" };
     return (
         <ul id="gnb">
-            <li><NavLink activeStyle={active} to="/department">Department</NavLink></li>
+            <li><NavLink activeStyle={active} to="/about">About</NavLink></li>
             <li><NavLink activeStyle={active} to="/qna">Q&A</NavLink></li>
             <li><NavLink activeStyle={active} to="/gallery">Gallery</NavLink></li>
             <li><NavLink activeStyle={active} to="/youtube">Youtube</NavLink></li>

@@ -6,7 +6,7 @@ import Footer from "./components/common/Footer";
 import Main from "./components/main/Main";
 
 //sub
-import Department from "./components/sub/Department";
+import About from "./components/sub/About";
 import Qna from "./components/sub/Qna";
 import Gallery from "./components/sub/Gallery";
 import Youtube from "./components/sub/Youtube";
@@ -37,13 +37,12 @@ function App() {
       </Switch>
 
 
-      <Route path="/department" component={Department}></Route>
+      <Route path="/about" component={About}></Route>
       <Route path="/qna" component={Qna}></Route>
       <Route path="/gallery" component={Gallery}></Route>
       <Route path="/youtube" component={Youtube}></Route>
       <Route path="/location" component={Location}></Route>
       <Route path="/join" component={Join}></Route>
-
 
       <Footer />
     </div >
