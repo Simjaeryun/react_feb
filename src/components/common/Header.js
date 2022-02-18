@@ -31,12 +31,12 @@ function Gnb() {
     const active = { color: "aqua" };
     return (
         <ul id="gnb">
-            <li><NavLink activeStyle={active} to="/about">About</NavLink></li>
+            <li><NavLink activeStyle={active} to="/about">ABOUT</NavLink></li>
             <li><NavLink activeStyle={active} to="/qna">Q&A</NavLink></li>
-            <li><NavLink activeStyle={active} to="/gallery">Gallery</NavLink></li>
-            <li><NavLink activeStyle={active} to="/youtube">Youtube</NavLink></li>
-            <li><NavLink activeStyle={active} to="/location">Location</NavLink></li>
-            <li><NavLink activeStyle={active} to="/join">Join</NavLink></li>
+            <li><NavLink activeStyle={active} to="/gallery">GALLERY</NavLink></li>
+            <li><NavLink activeStyle={active} to="/youtube">VIDEOS</NavLink></li>
+            <li><NavLink activeStyle={active} to="/location">LOCATION</NavLink></li>
+            <li><NavLink activeStyle={active} to="/join">JOIN</NavLink></li>
         </ul>
     )
 }

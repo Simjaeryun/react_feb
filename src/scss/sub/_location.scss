@@ -1,4 +1,9 @@
 .location {
+	figure {
+		img {
+			object-position: bottom;
+		}
+	}
 	.inner {
 		> section {
 			#map {

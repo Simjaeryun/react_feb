@@ -8,6 +8,8 @@ export default function Qna() {
     const updateInput = useRef(null);
     const updateTextarea = useRef(null);
 
+    const path = process.env.PUBLIC_URL;
+
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
         //만약 로컬저장소에 posts키값의 데이터가 있으면
@@ -104,10 +106,13 @@ export default function Qna() {
 
     return (
         <main className="content qna" ref={main}>
-            <figure></figure>
+            <figure>
+                <img src={`${path}/img/qna.jpg`} alt="" />
+                <h1 className="qna_title">Q&A</h1>
+            </figure>
 
             <div className="inner">
-                <h1 className="qna_title">Q&A</h1>
+
 
                 <section className="qna_content">
                     <div className='qna_input'>
