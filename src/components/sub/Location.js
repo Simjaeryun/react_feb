@@ -100,12 +100,19 @@ export default function Location() {
                     <div className="location_content">
                         <div className="location_btns">
                             <nav className='traffic'>
-                                <button onClick={handleTrafficClick} ref={traffic}>View traffic information</button>
+                                <button
+                                    className="on"
+                                    onClick={handleTrafficClick}
+                                    ref={traffic}
+                                >
+                                    View traffic information
+                                </button>
                             </nav>
 
                             <nav className="branch">
                                 {mapInfo.map((data, idx) => {
                                     return (<button
+                                        className={idx < 1 ? "on" : ""}
                                         ref={branch}
                                         key={idx}
                                         onClick={(e) => {
