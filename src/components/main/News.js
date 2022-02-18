@@ -13,7 +13,7 @@ export default function News() {
 
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
-
+        console.log(data)
         if (data) {
             return JSON.parse(data);
         } else {
@@ -32,17 +32,17 @@ export default function News() {
         <section id='news'>
             <div className="inner">
                 <h1>Recent Post</h1>
-
                 <ul>
                     {posts.map((post, idx) => {
-                        if (idx < 4) {
-                            return (
+                        return (
+                            idx < 4
+                                ?
                                 <li key={idx}>
                                     <h2>{post.title}</h2>
                                     <p>{post.content}</p>
                                 </li>
-                            )
-                        }
+                                : null
+                        )
                     })}
                 </ul>
             </div>
