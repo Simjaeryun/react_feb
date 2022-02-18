@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards, EffectCoverflow, EffectCube, Navigation, Pagination, } from 'swiper';
+import { EffectCoverflow, Navigation, Pagination, } from 'swiper';
 
 
 export default function Youtube() {
@@ -62,7 +62,11 @@ export default function Youtube() {
                             modules={[Navigation, Pagination]}
                             spaceBetween={50}
                             slidesPerView={4}
-                            pagination={{ clickable: true }}
+                            pagination={{
+                                clickable: true,
+                                dynamicBullets: true,
+                            }}
+
                             loop
                         >
 

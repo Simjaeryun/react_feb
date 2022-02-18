@@ -30,7 +30,7 @@ export default function Gallery() {
     }
     const getFlickr = async opt => {
         const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
-        const method1 = 'flickr.interestingness.getList';
+        // const method1 = 'flickr.interestingness.getList';
         const method2 = 'flickr.photos.search'
         const num = opt.count;
         let url = '';

@@ -161,7 +161,7 @@ export default function Join() {
                             </div>
                             {/* Gender */}
                             <div className="form_input">
-                                <h2>Gender</h2>
+                                <label>Gender</label>
                                 <div className="gender_input">
                                     <label htmlFor="male">Male</label>
                                     <input
