@@ -109,8 +109,8 @@ export default function Gallery() {
                     <h1 onClick={showInterest}>PHOTO<br />GALLERY</h1>
                 </figure>
                 <div className="inner">
+                    <h2><strong>B</strong>EST<br /> <strong>O</strong>F<br /> <strong>B</strong>EST</h2>
                     <div className='best_photo'>
-                        <h2><strong>B</strong>EST<br /> <strong>O</strong>F<br /> <strong>B</strong>EST</h2>
                         <Swiper
                             modules={[EffectCoverflow, EffectCube]}
                             className='best_photo_list'
@@ -137,8 +137,8 @@ export default function Gallery() {
                             })}
                         </Swiper>
                     </div>
+                    <h2><strong>S</strong>EARCH <br /> <strong>P</strong>HOTO</h2>
                     <div className="searchBox">
-                        <h2><strong>S</strong>EARCH <br /> <strong>P</strong>HOTO</h2>
                         <input
                             type="text"
                             ref={input}
