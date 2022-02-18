@@ -118,13 +118,13 @@ export default function Qna() {
                     <div className='qna_input'>
                         <input
                             type="text"
-                            placeholder='제목을 입력하세요'
+                            placeholder='Please enter a title'
                             ref={input}
                         /><br />
                         <textarea
                             cols="30"
                             rows="10"
-                            placeholder='내용을 입력하세요'
+                            placeholder='Please enter your question'
                             ref={textarea}
                         >
                         </textarea><br />
@@ -132,9 +132,9 @@ export default function Qna() {
                             <button onClick={() => {
                                 input.current.value = '';
                                 textarea.current.value = '';
-                            }}>cancel</button>
+                            }}>CANCLE</button>
 
-                            <button onClick={createPost}>create</button>
+                            <button onClick={createPost}>CREATE</button>
                         </div>
                     </div>
 
@@ -161,8 +161,8 @@ export default function Qna() {
                                                 </div>
 
                                                 <div className="btns">
-                                                    <button onClick={() => updatePost(idx)}>update</button>
-                                                    <button onClick={() => disableUpdate(idx)}>cancel</button>
+                                                    <button onClick={() => updatePost(idx)}>UPDATE</button>
+                                                    <button onClick={() => disableUpdate(idx)}>CANCEL</button>
                                                 </div>
                                             </>
                                             :
@@ -174,8 +174,8 @@ export default function Qna() {
                                                 </div>
 
                                                 <div className="btns">
-                                                    <button onClick={() => enableUpdate(idx)}>modify</button>
-                                                    <button onClick={() => deletePost(idx)}>delete</button>
+                                                    <button onClick={() => enableUpdate(idx)}>MODIFY</button>
+                                                    <button onClick={() => deletePost(idx)}>DELETE</button>
                                                 </div>
                                             </>
                                     }

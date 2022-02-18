@@ -12,6 +12,8 @@
 					padding: 20px;
 					text-align: center;
 					border: 1px solid #ececec;
+					font-size: 20px;
+					font-family: "Noto Sans KR", sans-serif;
 					margin-bottom: 10px;
 				}
 				.qna_btn {
@@ -19,23 +21,34 @@
 					margin: 0 auto;
 					display: flex;
 					justify-content: space-between;
+					button {
+						cursor: pointer;
+						border: none;
+						background: #aaa;
+						color: #fff;
+						&:hover {
+							background: #666;
+						}
+					}
 				}
 				button {
 					width: 49%;
 					padding: 20px;
-					border: 1px solid #ececec;
+					font-size: 20px;
+					font-weight: 700;
+					font-family: "Noto Sans", sans-serif;
+					cursor: pointer;
 				}
 			}
 			.showList {
 				width: 100%;
-				margin-top: 50px;
 				article {
 					width: 100%;
 					text-align: center;
 					margin-bottom: 30px;
 					margin: 0 auto;
-					padding: 20px 0px;
-					border-bottom: 2px solid #ececec;
+					padding: 50px 0px;
+					border-bottom: 3px solid #aaa;
 					.post {
 						width: 100%;
 						h2 {
@@ -46,18 +59,37 @@
 							font-size: 20px;
 							margin-bottom: 10px;
 						}
+						input,
+						textarea {
+							width: 100%;
+							padding: 20px;
+							text-align: center;
+							border: 1px solid #ececec;
+							font-size: 20px;
+							font-family: "Noto Sans KR", sans-serif;
+							margin-bottom: 10px;
+						}
 					}
 					.btns {
 						width: 100%;
 						display: flex;
 						justify-content: center;
+						margin-top: 30px;
 						button {
-							width: 30%;
+							width: 20%;
 							margin-right: 10px;
 							border: none;
 							padding: 10px;
 							cursor: pointer;
 							font-weight: bold;
+							background: #aaa;
+							color: #fff;
+							font-weight: 700;
+							font-family: "Noto Sans", sans-serif;
+							font-size: 18px;
+							&:hover {
+								background: #666;
+							}
 						}
 					}
 				}
