@@ -33,6 +33,7 @@ export default function About() {
                             slidesPerView={1}
                             pagination={{ clickable: true }}
                             scrollbar={{ draggable: true }}
+
                         >
                             <SwiperSlide>
                                 <img src={`${path}/img/about_we1.jpg`} alt="" />
@@ -60,6 +61,7 @@ export default function About() {
                                     <div className="about_member_txt">
                                         <h3>{member.name}</h3>
                                         <h4>{member.position}</h4>
+                                        <p>{member.desc}</p>
                                     </div>
                                 </article>
                             )

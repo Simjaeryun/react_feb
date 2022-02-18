@@ -6,32 +6,40 @@ const initMember = {
         {
             "name": "Julia",
             "position": "CEO",
-            "pic": "member1.jpg"
+            "pic": "member1.jpg",
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
         },
         {
             "name": "Paul",
             "position": "Vice President",
-            "pic": "member2.jpg"
+            "pic": "member2.jpg",
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
         },
         {
             "name": "Lisa",
-            "position": "Engineer",
+            "position": "Front-end",
             "pic": "member3.jpg"
+            ,
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
         },
         {
-            "name": "Lisa",
-            "position": "Engineer",
-            "pic": "member4.jpg"
+            "name": "Emma",
+            "position": "Back-end",
+            "pic": "member4.jpg",
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
+
         },
         {
-            "name": "Lisa",
-            "position": "Engineer",
-            "pic": "member5.jpg"
+            "name": "Juliet",
+            "position": "Designer",
+            "pic": "member5.jpg",
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
         },
         {
-            "name": "Lisa",
-            "position": "Engineer",
-            "pic": "member6.jpg"
+            "name": "Anna",
+            "position": "Designer",
+            "pic": "member6.jpg",
+            "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, itaque. Accusantium, rem quam eum molestiae unde cupiditate dolor iure molestias ullam iste vero doloribus distinctio, sequi, possimus minima ab. Ratione!"
         }
     ]
 }
