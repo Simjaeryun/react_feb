@@ -18,10 +18,9 @@
 			.swiper-scrollbar {
 				width: 20%;
 				top: 0;
+				left: 98.5rem;
 			}
-			.swiper-pagination {
-				bottom: 0px;
-			}
+
 			.swiper-wrapper {
 				align-items: flex-end;
 			}
@@ -33,7 +32,6 @@
 				width: 100%;
 				height: 330px;
 				display: flex;
-				padding-bottom: 30px;
 				.img_box {
 					width: 430px;
 					height: 90%;

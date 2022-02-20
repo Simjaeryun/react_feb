@@ -11,14 +11,15 @@ export default function Highlight() {
             <div className="inner">
                 <h1>HIGHLIGHT</h1>
                 <div>
+
                     <Swiper
                         className="img_container"
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
                         spaceBetween={15}
                         slidesPerView={4}
-                        pagination={{ clickable: true }}
-                        scrollbar
+                        scrollbar={{ draggable: true }}
                     >
+                        <div className="younzu"></div>
                         {flickerImg.map((data, idx) => {
                             return (
                                 idx < 20 && idx > 12 ?
@@ -32,6 +33,7 @@ export default function Highlight() {
                                                 Lorem ipsum, dolor sit amet consectetur adipisicing.
                                             </p>
                                         </div>
+
                                     </SwiperSlide>
                                     : null
                             )
