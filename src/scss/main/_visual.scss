@@ -10,7 +10,7 @@
 		.visual_btns {
 			position: absolute;
 			z-index: 2;
-			right: 180px;
+			right: 20rem;
 			top: 100px;
 			.prev,
 			.next {
@@ -27,7 +27,7 @@
 		}
 
 		.img_container {
-			height: 700px;
+			height: 75rem;
 			border-radius: 5px;
 			position: relative;
 
@@ -38,6 +38,16 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				.img_img {
+					width: 100%;
+					height: 100%;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: top;
+					}
+				}
 			}
 			> .swiper-button-prev {
 				left: 99%;

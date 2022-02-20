@@ -3,7 +3,7 @@ import { Navigation, Pagination, EffectFade, } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 export default function Visual() {
-
+    const path = process.env.PUBLIC_URL;
     return (
         <section className="visual">
             <div className="inner">
@@ -31,44 +31,21 @@ export default function Visual() {
                 >
                     <SwiperSlide className="img_box">
                         <div className="img_img">
-                            <img src="" alt="" />
+                            <img src={`${path}/img/main_banner1.jpg`} alt="패션쇼 모델워킹" />
                         </div>
-                        <div className="img_txt">
-                            <h1 className="img_title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p className="img_desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing.
-                            </p>
 
-                        </div>
                     </SwiperSlide>
                     <SwiperSlide className="img_box">
                         <div className="img_img">
-                            <img src="" alt="" />
+                            <img src={`${path}/img/main_banner2.jpg`} alt="패션쇼 모델워킹" />
                         </div>
-                        <div className="img_txt">
-                            <h1 className="img_title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p className="img_desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing.
-                            </p>
 
-                        </div>
                     </SwiperSlide>
                     <SwiperSlide className="img_box">
                         <div className="img_img">
-                            <img src="" alt="" />
+                            <img src={`${path}/img/main_banner3.jpg`} alt="패션쇼 모델워킹" />
                         </div>
-                        <div className="img_txt">
-                            <h1 className="img_title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p className="img_desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing.
-                            </p>
-                        </div>
+
                     </SwiperSlide>
                 </Swiper>
             </div>

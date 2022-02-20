@@ -12,12 +12,13 @@ export default function News() {
     ]
 
     const getLocalItems = () => {
-        let data = localStorage.getItem('posts');
-        console.log(data)
-        if (data) {
-            return JSON.parse(data);
-        } else {
+        const data = localStorage.getItem('posts');
+        const dataArr = JSON.parse(data)
+        console.log(dataArr)
+        if (dataArr.length === 0) {
             return defaultData;
+        } else {
+            return JSON.parse(data);
         }
     }
 

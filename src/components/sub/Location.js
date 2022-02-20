@@ -92,7 +92,7 @@ export default function Location() {
         <main className="content location" ref={main}>
             <figure>
                 <img src={`${path}/img/location.jpg`} alt="" />
-                <h1>Location</h1>
+                <h1>LOCATION</h1>
             </figure>
             <div className="inner">
                 <section>
