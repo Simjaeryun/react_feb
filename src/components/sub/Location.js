@@ -111,20 +111,21 @@ export default function Location() {
 
                             <nav className="branch">
                                 {mapInfo.map((data, idx) => {
-                                    return (<button
-                                        className={idx < 1 ? "on" : ""}
-                                        ref={branch}
-                                        key={idx}
-                                        onClick={(e) => {
-                                            setIndex(idx)
-                                            const a = Array.from(e.target.parentNode.childNodes)
-                                            for (const el of a) {
-                                                el.classList.remove("on")
-                                            }
-                                            e.target.classList.add("on")
-                                        }}>
-                                        {data.title}
-                                    </button>
+                                    return (
+                                        <button
+                                            className={idx < 1 ? "on" : ""}
+                                            ref={branch}
+                                            key={idx}
+                                            onClick={(e) => {
+                                                setIndex(idx)
+                                                const a = Array.from(e.target.parentNode.childNodes)
+                                                for (const el of a) {
+                                                    el.classList.remove("on")
+                                                }
+                                                e.target.classList.add("on")
+                                            }}>
+                                            {data.title}
+                                        </button>
                                     )
                                 })}
                             </nav>
@@ -135,7 +136,7 @@ export default function Location() {
                                 return (
                                     idx === index
                                         ?
-                                        <img src={`${path}${mapInfo[index].mapImg}`} alt="" />
+                                        <img key={idx} src={`${path}${mapInfo[index].mapImg}`} alt="" />
                                         : null
                                 )
                             })}

@@ -12,12 +12,10 @@ export default function Qna() {
 
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
-        //만약 로컬저장소에 posts키값의 데이터가 있으면
         if (data) {
             //해당 데이터를 객체형태로 다시 변환해서 리턴
             return JSON.parse(data);
         }
-        //로컬 저장소에 데이터가 없을때 (해당 컴포넌트가 첨 로딩시)
         else {
             return [];
         }

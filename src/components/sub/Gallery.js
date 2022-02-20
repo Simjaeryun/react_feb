@@ -30,12 +30,12 @@ export default function Gallery() {
     }
     const getFlickr = async opt => {
         const api_key = "f7cfb698e2ac45b786af0b554ec7cd09";
-        // const method1 = 'flickr.interestingness.getList';
+        const method1 = 'flickr.interestingness.getList';
         const method2 = 'flickr.photos.search'
         const num = opt.count;
         let url = '';
         if (opt.type === 'interest') {
-            url = `https://www.flickr.com/services/rest/?method=${method2}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1&tags=dior`
+            url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1&`
         }
         if (opt.type === 'search') {
             url = `https://www.flickr.com/services/rest/?method=${method2}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
@@ -48,9 +48,9 @@ export default function Gallery() {
             }
             dispatch(setFlicker(json.data.photos.photo))
         })
-        frame.current.classList.add('on');
         setLoading(false);
         setEnableClick(true);
+        if (frame !== null) frame.current.classList.add('on');
     }
 
     const showInterest = () => {
@@ -84,7 +84,6 @@ export default function Gallery() {
                 tags: result
             })
         }
-
         input.current.value = ""
     }
     const handleKeyUp = e => {
