@@ -31,9 +31,9 @@
 							font-size: 24px;
 							padding: 20px;
 							font-family: "Noto Sans KR", sans-serif;
+							background: #aaa;
 							cursor: pointer;
-							&.on,
-							&:hover {
+							&.on {
 								background: #050505;
 								color: #fff;
 							}
