@@ -12,11 +12,9 @@ export default function About() {
 
     return (
         <main className="content about" ref={main}>
-            <figure>
-                <img src={`${path}/img/about.jpg`} alt="" />
-                <h1>ABOUT</h1>
-            </figure>
+
             <div className="inner">
+                <h1>ABOUT</h1>
                 <section className="about_we">
                     <h2>
                         <strong>W</strong>HO<br />
