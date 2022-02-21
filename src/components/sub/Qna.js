@@ -107,7 +107,7 @@ export default function Qna() {
         <main className="content qna" ref={main}>
 
             <div className="inner">
-                <h1 className="qna_title">Q&A</h1>
+                <h1 className="qna_title">#Q&A</h1>
                 <p>Got a question? We have the answer!</p>
                 <section className="qna_content">
                     <h2>

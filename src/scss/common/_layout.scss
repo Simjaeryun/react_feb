@@ -52,7 +52,11 @@ main {
 		h1 {
 			margin-bottom: 100px;
 			font-size: 60px;
-			font-family: "Archivo Black", sans-serif;
+			font-family: "Poppins", sans-serif;
+			display: flex;
+			svg {
+				font-size: 30px;
+			}
 		}
 
 		// h2 {

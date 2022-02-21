@@ -17,7 +17,7 @@ export default function Header(props) {
         <>
             <header className={props.type}>
                 <div className="inner">
-                    <h1><NavLink exact to="/">LOGO</NavLink></h1>
+                    <h1><NavLink exact to="/">magazine</NavLink></h1>
                     <Gnb />
                     <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
                 </div>

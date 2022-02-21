@@ -20,7 +20,7 @@ export default function Youtube() {
         <>
             <main className="content youtube" ref={main}>
                 <div className="inner">
-                    <h1>VIDEO</h1>
+                    <h1>#VIDEOS</h1>
                     <section>
                         <h2 className="youtube_content_title"><strong>P</strong>opular <br /><strong>V</strong>ideos</h2>
                         <Swiper

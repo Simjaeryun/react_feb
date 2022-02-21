@@ -92,7 +92,7 @@ export default function Join() {
     return (
         <main className="content join" ref={main}>
             <div className="inner">
-                <h1>Join</h1>
+                <h1>#Join</h1>
                 <section>
                     {success ? <div className="success">회원가입을 축하합니다.</div> : null}
                     <form onSubmit={handleSubmit}>

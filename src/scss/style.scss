@@ -4,21 +4,16 @@ $tablet: 1179px;
 $mobile: 639px;
 
 //google fonts
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans:wght@400;700&family=Poiret+One&family=Poppins:wght@400;700&display=swap");
 /*
-font-family: 'Archivo Black', sans-serif;
+font-family: 'Merriweather', serif;
 font-family: 'Noto Sans', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Poppins', sans-serif;
 */
 
 //눈누 font
-@font-face {
-	font-family: "SF_HambakSnow";
-	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
-		format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
 
 @font-face {
 	font-family: "Pretendard-Black";

@@ -13,14 +13,15 @@ header {
 		justify-content: space-between;
 		h1 {
 			a {
-				font-size: 30px;
+				font-size: 50px;
 				color: black;
-				font-family: "SF_HambakSnow";
+				font-family: "Poiret One", cursive;
 			}
 		}
 		#gnb {
 			display: flex;
 			a {
+				font-family: "Merriweather", serif;
 				display: block;
 				padding: 20px;
 				font-size: 18px;
@@ -39,16 +40,15 @@ header {
 		}
 	}
 	&.sub_header {
-		position: fixed;
-		background: rgba(0, 0, 0, 0.3);
 		top: 0;
 		left: 0;
+		position: absolute;
 		z-index: 5;
-		color: #fff;
+		border-bottom: 2px solid #000;
+		background: transparent;
 		.inner {
 			#gnb {
 				a {
-					color: #fff;
 				}
 			}
 		}

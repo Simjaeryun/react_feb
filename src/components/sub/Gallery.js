@@ -104,7 +104,7 @@ export default function Gallery() {
         <>
             <main className="content gallery" ref={main}>
                 <div className="inner">
-                    <h1 onClick={showInterest}>PHOTO<br />GALLERY</h1>
+                    <h1 onClick={showInterest}>#GALLERY</h1>
 
                     <h2><strong>B</strong>EST<br /> <strong>O</strong>F<br /> <strong>B</strong>EST</h2>
                     <div className='best_photo'>
