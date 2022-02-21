@@ -1,8 +1,8 @@
 header {
-	background: transparent;
 	width: 100%;
 	height: 120px;
 	z-index: 5;
+	border-bottom: 2px solid #000;
 	.inner {
 		padding: 0 22rem 0 32rem;
 		height: 100%;
@@ -15,7 +15,7 @@ header {
 			a {
 				font-size: 50px;
 				color: black;
-				font-family: "Poiret One", cursive;
+				font-family: "Noto Serif Display", serif;
 			}
 		}
 		#gnb {
