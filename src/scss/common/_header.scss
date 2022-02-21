@@ -14,7 +14,7 @@ header {
 		h1 {
 			a {
 				font-size: 50px;
-				color: black;
+				color: rgb(179, 25, 25);
 				font-family: "Noto Serif Display", serif;
 			}
 		}
@@ -42,10 +42,10 @@ header {
 	&.sub_header {
 		top: 0;
 		left: 0;
-		position: absolute;
+		position: fixed;
 		z-index: 5;
 		border-bottom: 2px solid #000;
-		background: transparent;
+		background: #efefef;
 		.inner {
 			#gnb {
 				a {

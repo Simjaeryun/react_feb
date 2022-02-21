@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards, Navigation, } from 'swiper';
+import { Navigation, } from 'swiper';
 
 
 export default function Youtube() {
@@ -22,33 +22,35 @@ export default function Youtube() {
                 <div className="inner">
                     <h1>#VIDEOS</h1>
                     <section>
-                        <h2 className="youtube_content_title"><strong>P</strong>opular <br /><strong>V</strong>ideos</h2>
-                        <Swiper
-                            className="hot_youtube"
-                            modules={[Navigation, EffectCards]}
-                            slidesPerView={3}
-                            loop
-                            effect='cards'
-                            centeredSlides
-                        >
-                            {vidData.map((item, idx) => {
-                                return (
-                                    idx > 5
-                                        ?
-                                        <SwiperSlide key={idx} className="hot_yotube_content">
-                                            <img
-                                                src={item.snippet.thumbnails.maxres.url}
-                                                alt=""
-                                                onClick={(e) => {
-                                                    setIsPop(true);
-                                                    setIndex(idx);
-                                                }}
-                                            />
-                                        </SwiperSlide>
-                                        : null
-                                )
-                            })}
-                        </Swiper>
+
+                        <div className="hot_youtube_container">
+                            <Swiper
+                                className="hot_youtube"
+                                modules={[Navigation,]}
+                                spaceBetween={1}
+                                slidesPerView={2}
+                                loop
+
+                            >
+                                {vidData.map((item, idx) => {
+                                    return (
+                                        idx > 5
+                                            ?
+                                            <SwiperSlide key={idx} className="hot_yotube_content">
+                                                <img
+                                                    src={item.snippet.thumbnails.maxres.url}
+                                                    alt=""
+                                                    onClick={(e) => {
+                                                        setIsPop(true);
+                                                        setIndex(idx);
+                                                    }}
+                                                />
+                                            </SwiperSlide>
+                                            : null
+                                    )
+                                })}
+                            </Swiper>
+                        </div>
                         <h2 className="youtube_content_title"><strong>A</strong>ll<br /><strong>V</strong>ideos</h2>
                         <div className="all_youtube">
 

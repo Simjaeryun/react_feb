@@ -28,7 +28,7 @@ export default function Header(props) {
 
 
 function Gnb() {
-    const active = { color: "aqua" };
+    const active = { color: "rgb(179, 25, 25)" };
     return (
         <ul id="gnb">
             <li><NavLink activeStyle={active} to="/about">ABOUT</NavLink></li>

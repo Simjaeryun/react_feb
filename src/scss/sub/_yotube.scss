@@ -23,13 +23,18 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding-bottom: 100px;
-
-			.hot_youtube {
-				margin-top: 30px;
+			position: relative;
+			.hot_youtube_container {
+				width: 100%;
 				height: 400px;
-				padding-top: 20px;
-				padding-bottom: 80px;
-				border-bottom: 3px solid #ddd;
+				overflow-x: hidden;
+			}
+			.hot_youtube {
+				overflow: visible;
+				position: absolute;
+				width: 100%;
+				height: 400px;
+				left: 0;
 				.hot_yotube_content {
 					img {
 						width: 100%;
@@ -56,7 +61,7 @@
 
 				.all_youtube_content {
 					width: 49%;
-					margin-bottom: 50px;
+					margin-bottom: 35px;
 
 					.pic {
 						width: 100%;
