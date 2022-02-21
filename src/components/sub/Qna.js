@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 export default function Qna() {
     const main = useRef(null);
     const input = useRef(null);
@@ -104,15 +105,50 @@ export default function Qna() {
 
     return (
         <main className="content qna" ref={main}>
-            <figure>
-                <img src={`${path}/img/qna.jpg`} alt="" />
-                <h1 className="qna_title">Q&A</h1>
-            </figure>
 
             <div className="inner">
-
+                <h1 className="qna_title">Q&A</h1>
+                <p>Got a question? We have the answer!</p>
+                <section className="qna_content">
+                    <h2>
+                        CANNESERIES FESTIVAL
+                    </h2>
+                    <p>
+                        <span> Who are we?</span>
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                    <p>
+                        How to access previous edtions archives?
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                    <p>
+                        How to contact us
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                </section>
 
                 <section className="qna_content">
+                    <h2>
+                        CANNESERIES FESTIVAL
+                    </h2>
+                    <p>
+                        <span> Who are we?</span>
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                    <p>
+                        How to access previous edtions archives?
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                    <p>
+                        How to contact us
+                        <FontAwesomeIcon icon={faAngleDown} />
+                    </p>
+                </section>
+
+                <section className="qna_content">
+                    <h2>
+                        SEND A QUESTION
+                    </h2>
                     <div className='qna_input'>
                         <input
                             type="text"
