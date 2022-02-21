@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, } from 'swiper';
+import { Autoplay, Navigation, } from 'swiper';
 
 
 export default function Youtube() {
@@ -20,17 +20,18 @@ export default function Youtube() {
         <>
             <main className="content youtube" ref={main}>
                 <div className="inner">
-                    <h1>#VIDEOS</h1>
                     <section>
-
                         <div className="hot_youtube_container">
                             <Swiper
                                 className="hot_youtube"
-                                modules={[Navigation,]}
+                                modules={[Navigation, Autoplay]}
                                 spaceBetween={1}
                                 slidesPerView={2}
                                 loop
-
+                                autoplay={{
+                                    delay: 1000,
+                                    disableOnInteraction: false,
+                                }}
                             >
                                 {vidData.map((item, idx) => {
                                     return (
@@ -51,23 +52,64 @@ export default function Youtube() {
                                 })}
                             </Swiper>
                         </div>
-                        <h2 className="youtube_content_title"><strong>A</strong>ll<br /><strong>V</strong>ideos</h2>
-                        <div className="all_youtube">
+                        <div className="youtube_container">
+                            <div className="youtube_column">
+                                <h2 className="youtube_content_title"><strong>K</strong>OREA</h2>
+                                <div className="all_youtube">
+                                    {vidData.map((item, idx) => {
+                                        return (
+                                            <div key={idx} className="all_youtube_content">
+                                                <div className="pic" onClick={(e) => {
+                                                    setIsPop(true);
+                                                    setIndex(idx);
+                                                }}>
+                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <div className="youtube_column">
+                                <h2 className="youtube_content_title"><strong>J</strong>APEN</h2>
+                                <div className="all_youtube">
 
-                            {vidData.map((item, idx) => {
-                                return (
-                                    <div key={idx} className="all_youtube_content">
-                                        <div className="pic" onClick={(e) => {
-                                            setIsPop(true);
-                                            setIndex(idx);
-                                        }}>
-                                            <img src={item.snippet.thumbnails.maxres.url} alt="" />
-                                        </div>
+                                    {vidData.map((item, idx) => {
+                                        return (
+                                            <div key={idx} className="all_youtube_content">
+                                                <div className="pic" onClick={(e) => {
+                                                    setIsPop(true);
+                                                    setIndex(idx);
+                                                }}>
+                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                                </div>
 
-                                    </div>
-                                )
-                            })}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <div className="youtube_column">
+                                <h2 className="youtube_content_title"><strong>U</strong>SA</h2>
+                                <div className="all_youtube">
+
+                                    {vidData.map((item, idx) => {
+                                        return (
+                                            <div key={idx} className="all_youtube_content">
+                                                <div className="pic" onClick={(e) => {
+                                                    setIsPop(true);
+                                                    setIndex(idx);
+                                                }}>
+                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                                </div>
+
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
                         </div>
+
                     </section>
                 </div>
             </main>

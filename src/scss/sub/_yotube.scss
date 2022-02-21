@@ -1,5 +1,8 @@
 .youtube {
 	.inner {
+		padding-top: 120px;
+		padding-left: 22rem;
+		padding-right: 10rem;
 		h2 {
 			font-family: "Pretendard-Black";
 			color: #777;
@@ -52,17 +55,9 @@
 				}
 			}
 			.all_youtube {
-				padding-top: 50px;
-				padding-bottom: 150px;
-				border-bottom: 3px solid #ddd;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-
 				.all_youtube_content {
-					width: 49%;
-					margin-bottom: 35px;
-
+					width: 100%;
+					margin-bottom: 50px;
 					.pic {
 						width: 100%;
 						img {
@@ -74,6 +69,31 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.youtube_container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+	.youtube_column {
+		padding: 30px;
+		padding-top: 50px;
+		background: rgb(13, 13, 26);
+		width: 30%;
+		color: #fff;
+		position: relative;
+		.youtube_content_title {
+			text-align: left;
+			position: absolute;
+			left: -40px;
+			top: -40px;
+
+			strong {
+				color: #b31919;
+			}
+			color: #b31919;
 		}
 	}
 }
