@@ -13,7 +13,7 @@ export default function Youtube() {
 
     useEffect(() => {
         main.current.classList.add('on');
-
+        console.log(vidData)
     }, []);
 
     return (
@@ -25,7 +25,7 @@ export default function Youtube() {
                             <Swiper
                                 className="hot_youtube"
                                 modules={[Navigation, Autoplay]}
-                                spaceBetween={1}
+                                spaceBetween={0}
                                 slidesPerView={2}
                                 loop
                                 autoplay={{
@@ -34,8 +34,9 @@ export default function Youtube() {
                                 }}
                             >
                                 {vidData.map((item, idx) => {
+                                    console.log(item)
                                     return (
-                                        idx > 5
+                                        idx < 10
                                             ?
                                             <SwiperSlide key={idx} className="hot_yotube_content">
                                                 <img
@@ -58,14 +59,16 @@ export default function Youtube() {
                                 <div className="all_youtube">
                                     {vidData.map((item, idx) => {
                                         return (
-                                            <div key={idx} className="all_youtube_content">
-                                                <div className="pic" onClick={(e) => {
-                                                    setIsPop(true);
-                                                    setIndex(idx);
-                                                }}>
-                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                            idx > 9 && idx < 20 ?
+                                                <div key={idx} className="all_youtube_content">
+                                                    <div className="pic" onClick={(e) => {
+                                                        setIsPop(true);
+                                                        setIndex(idx);
+                                                    }}>
+                                                        <img src={item.snippet.thumbnails.standard.url} alt="" />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                : null
                                         )
                                     })}
                                 </div>
@@ -73,18 +76,18 @@ export default function Youtube() {
                             <div className="youtube_column">
                                 <h2 className="youtube_content_title"><strong>J</strong>APEN</h2>
                                 <div className="all_youtube">
-
                                     {vidData.map((item, idx) => {
                                         return (
-                                            <div key={idx} className="all_youtube_content">
-                                                <div className="pic" onClick={(e) => {
-                                                    setIsPop(true);
-                                                    setIndex(idx);
-                                                }}>
-                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                            idx > 19 && idx < 30 ?
+                                                <div key={idx} className="all_youtube_content">
+                                                    <div className="pic" onClick={(e) => {
+                                                        setIsPop(true);
+                                                        setIndex(idx);
+                                                    }}>
+                                                        <img src={item.snippet.thumbnails.standard.url} alt="" />
+                                                    </div>
                                                 </div>
-
-                                            </div>
+                                                : null
                                         )
                                     })}
                                 </div>
@@ -95,21 +98,21 @@ export default function Youtube() {
 
                                     {vidData.map((item, idx) => {
                                         return (
-                                            <div key={idx} className="all_youtube_content">
-                                                <div className="pic" onClick={(e) => {
-                                                    setIsPop(true);
-                                                    setIndex(idx);
-                                                }}>
-                                                    <img src={item.snippet.thumbnails.maxres.url} alt="" />
+                                            idx < 10 ?
+                                                <div key={idx} className="all_youtube_content">
+                                                    <div className="pic" onClick={(e) => {
+                                                        setIsPop(true);
+                                                        setIndex(idx);
+                                                    }}>
+                                                        <img src={item.snippet.thumbnails.standard.url} alt="" />
+                                                    </div>
                                                 </div>
-
-                                            </div>
+                                                : null
                                         )
                                     })}
                                 </div>
                             </div>
                         </div>
-
                     </section>
                 </div>
             </main>

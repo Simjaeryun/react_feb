@@ -10,7 +10,7 @@ export default function Videos() {
 
     const key = "AIzaSyDTqpCGvBZz_l-UfWUkSY-UWyzxgO58z2I";
     const playListId = "PLsGbxh85lJXKe7TgZX4e2nqkewL1urGyf";
-    const num = 10;
+    const num = 30;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`;
 
     const [isPop, setIsPop] = useState(false);
