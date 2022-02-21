@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination, } from 'swiper';
+import { EffectCards, Navigation, } from 'swiper';
 
 
 export default function Youtube() {
@@ -19,22 +19,17 @@ export default function Youtube() {
     return (
         <>
             <main className="content youtube" ref={main}>
-                <figure>
-                    <img src={`${path}/img/youtube.jpg`} alt="" />
-                    <h1>VIDEO</h1>
-                </figure>
                 <div className="inner">
-
-
+                    <h1>VIDEO</h1>
                     <section>
                         <h2 className="youtube_content_title"><strong>P</strong>opular <br /><strong>V</strong>ideos</h2>
                         <Swiper
                             className="hot_youtube"
-                            modules={[Navigation, EffectCoverflow]}
-                            spaceBetween={50}
+                            modules={[Navigation, EffectCards]}
                             slidesPerView={3}
                             loop
-                            effect='coverflow'
+                            effect='cards'
+                            centeredSlides
                         >
                             {vidData.map((item, idx) => {
                                 return (
@@ -54,25 +49,12 @@ export default function Youtube() {
                                 )
                             })}
                         </Swiper>
-
-
                         <h2 className="youtube_content_title"><strong>A</strong>ll<br /><strong>V</strong>ideos</h2>
-                        <Swiper
-                            className="all_youtube"
-                            modules={[Navigation, Pagination]}
-                            spaceBetween={50}
-                            slidesPerView={4}
-                            pagination={{
-                                clickable: true,
-                                dynamicBullets: true,
-                            }}
-
-                            loop
-                        >
+                        <div className="all_youtube">
 
                             {vidData.map((item, idx) => {
                                 return (
-                                    <SwiperSlide key={idx}>
+                                    <div key={idx} className="all_youtube_content">
                                         <div className="pic" onClick={(e) => {
                                             setIsPop(true);
                                             setIndex(idx);
@@ -80,10 +62,10 @@ export default function Youtube() {
                                             <img src={item.snippet.thumbnails.maxres.url} alt="" />
                                         </div>
 
-                                    </SwiperSlide>
+                                    </div>
                                 )
                             })}
-                        </Swiper>
+                        </div>
                     </section>
                 </div>
             </main>
