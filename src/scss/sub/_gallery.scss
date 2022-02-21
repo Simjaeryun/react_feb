@@ -1,5 +1,26 @@
 .gallery {
 	.inner {
+		h2 {
+			font-family: "Pretendard-Black";
+
+			color: #777;
+			font-size: 50px;
+			line-height: 65px;
+			margin: auto;
+			margin-bottom: 50px;
+			margin-top: 50px;
+			letter-spacing: 1px;
+			text-align: center;
+
+			strong {
+				color: #000;
+				font-size: 60px;
+			}
+
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
 		.best_photo {
 			border-bottom: 3px solid #ececec;
 			padding-bottom: 30px;

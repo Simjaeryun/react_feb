@@ -103,11 +103,9 @@ export default function Gallery() {
     return (
         <>
             <main className="content gallery" ref={main}>
-                <figure>
-                    <img src={`${path}/img/gallery.jpg`} alt="" />
-                    <h1 onClick={showInterest}>PHOTO<br />GALLERY</h1>
-                </figure>
                 <div className="inner">
+                    <h1 onClick={showInterest}>PHOTO<br />GALLERY</h1>
+
                     <h2><strong>B</strong>EST<br /> <strong>O</strong>F<br /> <strong>B</strong>EST</h2>
                     <div className='best_photo'>
                         <Swiper
