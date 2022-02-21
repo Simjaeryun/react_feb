@@ -1,18 +1,18 @@
 .side {
-	background: #e9e9e6;
+	background: #efefef;
+	border-right: 2px solid #000;
 	z-index: 5;
 	width: 10rem;
 	height: 100vh;
 	position: fixed;
 	top: 0;
 	left: 0;
-	border-right: 2px solid #e0e0e0;
 	font-weight: 700;
 	.side_logo {
 		writing-mode: vertical-lr;
 		margin: 50px auto;
 		transform: rotate(180deg);
-		color: #4a6bd6;
+
 		font-size: 30px;
 	}
 
@@ -27,7 +27,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				color: #4a6bd6;
+				color: #000;
 				font-size: 20px;
 			}
 		}
