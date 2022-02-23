@@ -21,13 +21,15 @@ export default function Highlight() {
                     >
                         <div className="younzu"></div>
                         {flickerImg.map((data, idx) => {
+                            const len = data.title.length;
+                            console.log(len)
                             return (
                                 idx < 20 && idx > 12 ?
                                     < SwiperSlide className="img_box" key={idx}>
                                         <img src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_z.jpg`} alt="" />
                                         <div className="img_txt">
                                             <h2 className="img_title">
-                                                Lorem ipsum dolor sit.
+                                                {len > 30 ? data.title.substring(0, 30) : data.title}
                                             </h2>
                                             <p className="img_des">
                                                 Lorem ipsum, dolor sit amet consectetur adipisicing.
