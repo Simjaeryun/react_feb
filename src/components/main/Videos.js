@@ -52,7 +52,7 @@ export default function Videos() {
                                             {tit_len > 40 ? tit.substr(0, 40) + ".." : tit}
                                         </h1>
                                         <p className="videos_main_description">
-                                            {desc_len > 250 ? desc.substr(0, 250) + "..." : desc}
+                                            {desc_len > 200 ? desc.substr(0, 200) + "..." : desc}
                                         </p>
                                     </div>
                                     : null

@@ -25,14 +25,13 @@ font-family: 'Noto Serif Display', serif;
 
 //main
 @import "./main/visual";
-@import "./main/intro";
 @import "./main/news";
 @import "./main/side";
 @import "./main/highlight";
 @import "./main/videos";
 @import "./main/member";
 @import "./main/photos";
-
+@import "./main/mainRwd";
 //Sub
 @import "./sub/about";
 @import "./sub/qna";

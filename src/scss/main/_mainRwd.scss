@@ -1,0 +1,108 @@
+@media only screen and (max-width: 1650px) {
+	header {
+		.inner {
+			padding: 0 15rem 0 30rem;
+			h1 {
+				a {
+					font-size: 5rem;
+					color: rgb(179, 25, 25);
+					font-family: "Noto Serif Display", serif;
+				}
+			}
+			#gnb {
+				display: flex;
+				a {
+					font-family: "Merriweather", serif;
+					display: block;
+					padding: 20px;
+					font-size: 2.5rem;
+					color: #000;
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+	section {
+		margin-bottom: 100px;
+		.inner {
+			padding: 0 15rem 0 30rem;
+		}
+	}
+	.visual {
+		.inner {
+			.visual_btns {
+				right: 11rem;
+			}
+		}
+	}
+	.highlight {
+		.inner {
+			> div {
+				.swiper-scrollbar {
+					width: 20%;
+					top: 0;
+					left: 106rem;
+				}
+			}
+		}
+	}
+	.videos {
+		.inner {
+			display: flex;
+			justify-content: space-between;
+			.videos_main {
+				width: 60%;
+			}
+			.videos_sub {
+				width: 39%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				padding-top: 100px;
+				.videos_sub_card {
+					width: 95%;
+					height: 15rem;
+					margin-bottom: 130px;
+					display: flex;
+					justify-content: flex-end;
+					padding: 0px;
+					&:last-child {
+						display: none;
+					}
+					.videos_sub_video {
+						width: 100%;
+						height: 30rem;
+					}
+					.videos_sub_txt {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.photos {
+		.inner {
+			.wrap {
+				.photos_txt_box {
+					width: 50%;
+				}
+			}
+		}
+	}
+	#member {
+		.inner {
+			.wrap {
+				flex-wrap: wrap;
+			}
+			article {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.side {
+		display: none;
+	}
+}

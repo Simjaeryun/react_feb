@@ -4,7 +4,6 @@ import News from './News';
 import Side from './Side';
 import Highlight from './Highlight';
 import Videos from './Videos';
-import Info from './info';
 
 import { useRef, } from 'react';
 import Photos from './Photos';
@@ -26,7 +25,6 @@ export default function Main() {
             <Photos />
             <Member />
             <News />
-            <Info />
         </div>
     )
 }
