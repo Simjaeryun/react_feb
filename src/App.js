@@ -15,6 +15,7 @@ import Join from "./components/sub/Join";
 import { Route, Switch } from 'react-router-dom';
 
 import './scss/style.scss'
+import 'animate.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

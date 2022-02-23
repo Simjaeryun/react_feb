@@ -2,8 +2,7 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from "swiper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+
 export default function About() {
     const main = useRef(null);
     const members = useSelector(state => state.aboutReducer.members)
@@ -14,14 +13,9 @@ export default function About() {
 
     return (
         <main className="content about" ref={main}>
-
             <div className="inner">
-                <h1>
-                    #ABOUT
-                </h1>
                 <section className="about_we">
                     <h2>
-
                         <strong>W</strong>HO<br />
                         A<strong>R</strong>E <br />
                         WE<strong>?</strong>
