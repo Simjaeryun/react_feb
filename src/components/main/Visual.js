@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade, } from 'swiper';
+import { Navigation, Pagination, EffectFade, Autoplay, } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 export default function Visual() {
@@ -18,7 +18,7 @@ export default function Visual() {
 
                 <Swiper
                     className="img_container"
-                    modules={[Navigation, Pagination, EffectFade]}
+                    modules={[Navigation, Pagination, EffectFade, Autoplay]}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
                     navigation={
@@ -28,6 +28,9 @@ export default function Visual() {
                         }
                     }
                     loop
+                    autoplay={{
+                        delay: 2000
+                    }}
                 >
                     <SwiperSlide className="img_box">
                         <div className="img_img">

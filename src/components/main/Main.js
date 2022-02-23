@@ -1,6 +1,5 @@
 import Header from '../common/Header';
 import Visual from './Visual';
-import Intro from './Intro';
 import News from './News';
 import Side from './Side';
 import Highlight from './Highlight';
@@ -9,6 +8,7 @@ import Info from './info';
 
 import { useRef, } from 'react';
 import Photos from './Photos';
+import Member from './Member';
 
 
 
@@ -24,7 +24,7 @@ export default function Main() {
             <Highlight />
             <Videos />
             <Photos />
-            <Intro />
+            <Member />
             <News />
             <Info />
         </div>
