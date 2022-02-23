@@ -17,7 +17,7 @@
 					height: 100%;
 					object-fit: cover;
 					border-radius: 5px;
-					box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.8);
+					box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.8);
 				}
 			}
 			.videos_main_title {
@@ -44,7 +44,6 @@
 				.videos_sub_video {
 					width: 55%;
 					height: 15rem;
-					background: cornflowerblue;
 					border-radius: 10px;
 					cursor: pointer;
 					img {
@@ -52,7 +51,7 @@
 						height: 100%;
 						object-fit: cover;
 						border-radius: 5px;
-						box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+						box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.8);
 					}
 				}
 				.videos_sub_txt {

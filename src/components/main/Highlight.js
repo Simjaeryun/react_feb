@@ -3,9 +3,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { useSelector } from 'react-redux';
 
 export default function Highlight() {
-    const path = process.env.PUBLIC_URL
     const flickerImg = useSelector(state => state.flickerReducer.flicker)
-    console.log(flickerImg)
     return (
         <section className="highlight myScroll">
             <div className="inner">

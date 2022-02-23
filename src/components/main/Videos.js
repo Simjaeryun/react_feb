@@ -18,14 +18,12 @@ export default function Videos() {
 
     useEffect(() => {
         fetchYoutube();
-        console.log(vidData)
     }, []);
 
     //axios로 받아온 youtube data를 dispatch로 reducer에 전달 
     const fetchYoutube = async () => {
         await axios.get(url).then(json => {
             dispatch(setYoutube(json.data.items));
-            console.log(json.data.items)
         });
     }
     return (
@@ -54,7 +52,7 @@ export default function Videos() {
                                             {tit_len > 40 ? tit.substr(0, 40) + ".." : tit}
                                         </h1>
                                         <p className="videos_main_description">
-                                            {desc_len > 300 ? desc.substr(0, 300) + "..." : desc}
+                                            {desc_len > 250 ? desc.substr(0, 250) + "..." : desc}
                                         </p>
                                     </div>
                                     : null

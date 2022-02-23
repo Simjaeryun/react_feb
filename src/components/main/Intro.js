@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 export default function Intro() {
     const path = process.env.PUBLIC_URL;
     const members = useSelector(state => state.aboutReducer.members)
-    console.log(members)
     return (
         <section id="intro">
             <div className="inner">

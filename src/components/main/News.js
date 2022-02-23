@@ -14,7 +14,6 @@ export default function News() {
     const getLocalItems = () => {
         const data = localStorage.getItem('posts');
         const dataArr = JSON.parse(data)
-        console.log(dataArr)
         if (dataArr.length === 0) {
             return defaultData;
         } else {
