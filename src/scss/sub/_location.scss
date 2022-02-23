@@ -1,69 +1,68 @@
 .location {
-	figure {
-		img {
-			object-position: bottom;
+	section {
+		width: 100%;
+		position: relative;
+
+		#map {
+			width: 70%;
+			height: 100vh;
+			background: #000;
+			position: fixed;
+			top: 0;
+			left: 0;
 		}
-	}
-	.inner {
-		> section {
+		.location_content {
+			position: absolute;
+			top: -80px;
+			right: 0;
+			width: 30%;
 			display: flex;
-			justify-content: space-between;
-			#map {
-				width: 50%;
-				height: 700px;
-				background: #000;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			background: #efefef;
+			border-left: 2px solid #000;
+			h2 {
+				font-size: 40px;
+				text-align: center;
+				margin-top: 30px;
+				font-family: "Amiri", serif;
 			}
-			.location_content {
-				width: 45%;
+			.location_pic_box {
+				padding: 40px;
 				display: flex;
 				flex-direction: column;
-				justify-content: space-around;
 				align-items: center;
-				.location_btns {
-					width: 45%;
-					margin-top: 50px;
-					text-align: center;
-					.traffic {
-						margin-bottom: 30px;
-						button {
-							border: none;
-							font-weight: 700;
-							font-size: 24px;
-							padding: 20px;
-							font-family: "Noto Sans KR", sans-serif;
-							background: #aaa;
-							cursor: pointer;
-							&.on {
-								background: #050505;
-								color: #fff;
-							}
-						}
-					}
-					.branch {
-						display: flex;
-						justify-content: space-around;
-						button {
-							padding: 10px;
-							font-size: 20px;
-							margin-right: 5px;
-							border: none;
-							font-weight: 700;
-							font-family: "Noto Sans KR", sans-serif;
-							cursor: pointer;
-							&:hover,
-							&.on {
-								background: #050505;
-								color: #fff;
-							}
-						}
-					}
-				}
 				.location_pic {
-					width: 100%;
+					padding: 10px;
+					width: 60%;
+					text-align: center;
 					height: 60%;
+					background: #fff;
+					margin-bottom: 20px;
 					img {
 						width: 100%;
 						height: 100%;
+						cursor: pointer;
+					}
+				}
+				.location_pic_txt {
+					text-align: center;
+					h3 {
+						font-size: 20px;
+						font-family: "Merriweather", serif;
+						margin-bottom: 10px;
+					}
+					p {
+						font-size: 18px;
+						padding: 0px 50px;
+						color: #888;
+						margin-bottom: 10px;
+					}
+					span {
+						font-size: 14px;
+						font-weight: 700;
+						color: #777;
 					}
 				}
 			}

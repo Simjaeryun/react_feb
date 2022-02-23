@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 export default function Location() {
     const main = useRef(null);
     const traffic = useRef(null);
-    const branch = useRef([]);
+    const location = useRef([]);
     const { kakao } = window;
     const container = useRef(null);
-    const [map, setMap] = useState(null);
+
     const [index, setIndex] = useState(0);
     const path = process.env.PUBLIC_URL;
     const info = [
@@ -16,7 +16,9 @@ export default function Location() {
             imgSrc: path + '/img/marker1.png',
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
-            mapImg: `/img/location_map1.jpg`
+            mapImg: `/img/location_map1.jpg`,
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eaque, aspernatur?",
+            time: "18:00"
         },
         {
             title: "JEJU",
@@ -24,7 +26,9 @@ export default function Location() {
             imgSrc: path + '/img/marker2.png',
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
-            mapImg: `/img/location_map2.jpg`
+            mapImg: `/img/location_map2.jpg`,
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eaque, aspernatur?",
+            time: "20:00"
         },
         {
             title: "BUSAN",
@@ -32,7 +36,9 @@ export default function Location() {
             imgSrc: path + '/img/marker3.png',
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
-            mapImg: `/img/location_map3.jpg`
+            mapImg: `/img/location_map3.jpg`,
+            des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eaque, aspernatur?",
+            time: "22:00"
         }
     ];
     const [mapInfo] = useState(info);
@@ -50,7 +56,7 @@ export default function Location() {
         }
 
         const map = new kakao.maps.Map(container.current, options);
-        setMap(map);
+
 
         new kakao.maps.Marker({
             map: map,
@@ -74,74 +80,44 @@ export default function Location() {
         return () => window.removeEventListener('resize', mapSet);
     }, [index]);
 
-    const handleTrafficClick = () => {
-        if (!traffic.current.classList.contains("on")) {
-            map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-            traffic.current.innerText = "Do not view traffic information"
-            traffic.current.classList.add("on")
-        }
-        else {
-            map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-            traffic.current.innerText = "View traffic information"
-            traffic.current.classList.remove("on")
-        }
-    }
-
 
     return (
         <main className="content location" ref={main}>
-            <div className="inner">
-                <h1>#LOCATION</h1>
-                <section>
-                    <div id="map" ref={container}></div>
-                    <div className="location_content">
-                        <div className="location_btns">
-                            <nav className='traffic'>
-                                <button
-                                    className="on"
-                                    onClick={handleTrafficClick}
-                                    ref={traffic}
-                                >
-                                    View traffic information
-                                </button>
-                            </nav>
 
-                            <nav className="branch">
-                                {mapInfo.map((data, idx) => {
-                                    return (
-                                        <button
-                                            className={idx < 1 ? "on" : ""}
-                                            ref={branch}
-                                            key={idx}
-                                            onClick={(e) => {
-                                                setIndex(idx)
-                                                const a = Array.from(e.target.parentNode.childNodes)
-                                                for (const el of a) {
-                                                    el.classList.remove("on")
-                                                }
-                                                e.target.classList.add("on")
-                                            }}>
-                                            {data.title}
-                                        </button>
-                                    )
-                                })}
-                            </nav>
-                        </div>
-                        <div className="location_pic">
-                            {mapInfo.map((data, idx) => {
+            <section>
+                <div id="map" ref={container}></div>
+                <div className="location_content">
+                    <h2>FIND<br /> A <br />BOUTIQUE</h2>
+                    {mapInfo.map((data, idx) => {
+                        return (
+                            <div className="location_pic_box">
+                                <div className="location_pic">
+                                    <img
+                                        key={idx}
+                                        src={`${path}${data.mapImg}`}
+                                        alt=""
+                                        ref={location}
+                                        onClick={(e) => {
+                                            setIndex(idx)
+                                            const a = Array.from(e.target.parentNode.childNodes)
+                                            for (const el of a) {
+                                                el.classList.remove("on")
+                                            }
+                                            e.target.classList.add("on")
+                                        }}
+                                    />
+                                </div>
+                                <div className="location_pic_txt">
+                                    <h3>{data.title}</h3>
+                                    <p>{data.des}</p>
+                                    <span>CLOSE {data.time}</span>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </section>
 
-                                return (
-                                    idx === index
-                                        ?
-                                        <img key={idx} src={`${path}${mapInfo[index].mapImg}`} alt="" />
-                                        : null
-                                )
-                            })}
-
-                        </div>
-                    </div>
-                </section>
-            </div >
         </main >
     )
 }
