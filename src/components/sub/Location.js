@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Location() {
     const main = useRef(null);
-    const traffic = useRef(null);
     const location = useRef([]);
     const { kakao } = window;
     const container = useRef(null);

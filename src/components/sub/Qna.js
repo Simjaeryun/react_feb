@@ -59,7 +59,6 @@ export default function Qna() {
                 return post;
             })
         )
-        console.log(posts);
     }
 
     const disableUpdate = index => {
@@ -69,7 +68,6 @@ export default function Qna() {
                 return post;
             })
         )
-        console.log(posts);
     }
 
     //실제 post 업데이트 함수
@@ -97,10 +95,8 @@ export default function Qna() {
         main.current.classList.add('on');
     }, [])
 
-    //posts값이 변경될때마사 실행될 hook
+
     useEffect(() => {
-        console.log('posts state변경됨')
-        //로컬스토리지에 posts키값으로 기존데이터를 문자형태로 변환해서 저장
         localStorage.setItem('posts', JSON.stringify(posts))
     }, [posts]);
 

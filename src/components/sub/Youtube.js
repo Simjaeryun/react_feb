@@ -13,7 +13,6 @@ export default function Youtube() {
 
     useEffect(() => {
         main.current.classList.add('on');
-        console.log(vidData)
     }, []);
 
     return (
@@ -34,7 +33,6 @@ export default function Youtube() {
                                 }}
                             >
                                 {vidData.map((item, idx) => {
-                                    console.log(item)
                                     return (
                                         idx < 10
                                             ?

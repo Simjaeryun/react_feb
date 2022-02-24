@@ -30,7 +30,6 @@ export default function Highlight() {
                     >
                         {flickerImg.map((data, idx) => {
                             const len = data.title.length;
-                            console.log(len)
                             return (
                                 idx < 20 && idx > 12 ?
                                     < SwiperSlide className="img_box" key={idx}>

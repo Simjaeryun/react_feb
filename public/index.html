@@ -78,11 +78,9 @@
     let count = 0;
     const imgDOM = defaults.querySelectorAll('img');
     imgDOM.forEach(img => {
-      if (window.innerWidth > 500) {
+      if (window.innerWidth > 1200) {
         img.onload = () => {
           count++;
-          console.log(count);
-
           if (count === len) {
             defaults.remove();
             mask.classList.add('off');

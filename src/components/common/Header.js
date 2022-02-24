@@ -43,7 +43,6 @@ export default function Header(props) {
 
 
 function Gnb() {
-    const active = { color: "rgb(179, 25, 25)" };
     return (
         <ul id="gnb">
             <GnbBtns name={"About"} link={"/about"} />

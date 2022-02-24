@@ -5,15 +5,10 @@ import { useRef, useState } from 'react'
 export default function QnaQustion(props) {
     const answer = useRef(null)
     const [isOn, setIsOn] = useState(true);
-
-    console.log(props.qustion)
     return (
         <div
             className="qna_content_card"
             onClick={() => {
-                // const isOn = answer.current.classList.contains("on");
-                // isOn ? answer.current.classList.remove("on") : answer.current.classList.add("on");
-                console.log(isOn)
                 if (isOn) {
                     answer.current.classList.add("on")
                     setIsOn(false);
