@@ -16,6 +16,10 @@ export default function Header(props) {
                 setIsOn(false)
             }
         })
+
+        return () => {
+            setIsOn(false)
+        }
     }, [mobileNav])
     return (
         <>
