@@ -5,7 +5,6 @@ import { Autoplay, Navigation, } from 'swiper';
 
 
 export default function Youtube() {
-    const path = process.env.PUBLIC_URL;
     const [isPop, setIsPop] = useState(false);
     const [index, setIndex] = useState(0);
     const main = useRef(null);
@@ -25,11 +24,14 @@ export default function Youtube() {
                                 className="hot_youtube"
                                 modules={[Navigation, Autoplay]}
                                 spaceBetween={0}
-                                slidesPerView={2}
+                                slidesPerView={1}
                                 loop
                                 autoplay={{
                                     delay: 1000,
                                     disableOnInteraction: false,
+                                }}
+                                breakpoints={{
+                                    1200: { slidesPerView: 2 }
                                 }}
                             >
                                 {vidData.map((item, idx) => {

@@ -39,6 +39,7 @@ font-family: 'Noto Serif Display', serif;
 @import "./sub/yotube";
 @import "./sub/location";
 @import "./sub/join";
+@import "./sub/subRwd";
 
 html {
 	font-size: 0.52vw;
@@ -51,13 +52,4 @@ body {
 
 #mainWrap {
 	background: #efefef;
-}
-
-@media screen and (max-width: 1720px) {
-}
-
-@media screen and (max-width: 1410px) {
-}
-
-@media screen and (max-width: 1250px) {
 }

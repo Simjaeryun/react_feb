@@ -104,17 +104,19 @@ export default function Gallery() {
         <>
             <main className="content gallery" ref={main}>
                 <div className="inner">
-                    <h1 onClick={showInterest}>#GALLERY</h1>
-
                     <h2><strong>B</strong>EST<br /> <strong>O</strong>F<br /> <strong>B</strong>EST</h2>
                     <div className='best_photo'>
                         <Swiper
                             modules={[EffectCoverflow, EffectCube]}
                             className='best_photo_list'
                             spaceBetween={50}
-                            slidesPerView={3}
+                            slidesPerView={1}
                             effect={"coverflow"}
                             loop
+                            breakpoints={{
+                                1000: { slidesPerView: 2 },
+                                1400: { slidesPerView: 3 },
+                            }}
                         >
                             {photoData.map((data, idx) => {
                                 return (
