@@ -2,16 +2,21 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useRef } from 'react';
+import GnbBtns from "./commonComponents/GnbBtns";
 export default function Header(props) {
     const mobileNav = useRef(null)
     const [isOn, setIsOn] = useState(true)
+
+
+
+
     useEffect(() => {
         window.addEventListener("resize", (e) => {
             if (e.target.innerWidth >= 1001) {
                 mobileNav.current.classList.remove("on");
             }
         })
-    })
+    }, [mobileNav])
     return (
         <>
             <header className={props.type}>
@@ -41,12 +46,12 @@ function Gnb() {
     const active = { color: "rgb(179, 25, 25)" };
     return (
         <ul id="gnb">
-            <li><NavLink activeStyle={active} to="/about">ABOUT</NavLink></li>
-            <li><NavLink activeStyle={active} to="/qna">Q&A</NavLink></li>
-            <li><NavLink activeStyle={active} to="/gallery">GALLERY</NavLink></li>
-            <li><NavLink activeStyle={active} to="/youtube">VIDEOS</NavLink></li>
-            <li><NavLink activeStyle={active} to="/location">LOCATION</NavLink></li>
-            <li><NavLink activeStyle={active} to="/join">JOIN</NavLink></li>
+            <GnbBtns name={"About"} link={"/about"} />
+            <GnbBtns name={"Q&A"} link={"/qna"} />
+            <GnbBtns name={"GALLERY"} link={"/gallery"} />
+            <GnbBtns name={"VIDEOS"} link={"/youtube"} />
+            <GnbBtns name={"LOCATION"} link={"/location"} />
+            <GnbBtns name={"JOIN"} link={"/join"} />
         </ul>
 
     )

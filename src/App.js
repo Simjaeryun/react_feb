@@ -50,12 +50,5 @@ function App() {
   );
 }
 
-/*
-  각 라우터를 Switch 컴포넌트로 감싸놓으면
-  중첩되는 경로가 있을때 상단에 있는 경로만 적용한다. 
-  Switch를 활용할때는 중첩되는 url경로중 디테일한 요소를 보통 위쪽에 배치해서
-  route를 세분화
-*/
-
 
 export default App;
