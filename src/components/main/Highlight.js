@@ -42,7 +42,6 @@ export default function Highlight() {
                                                 Lorem ipsum, dolor sit amet consectetur adipisicing.
                                             </p>
                                         </div>
-
                                     </SwiperSlide>
                                     : null
                             )

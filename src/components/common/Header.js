@@ -40,20 +40,20 @@ export default function Header(props) {
             </header>
         </>
     )
+    function Gnb() {
+        return (
+            <ul id="gnb">
+                <GnbBtns name={"About"} link={"/about"} />
+                <GnbBtns name={"Q&A"} link={"/qna"} />
+                <GnbBtns name={"GALLERY"} link={"/gallery"} />
+                <GnbBtns name={"VIDEOS"} link={"/youtube"} />
+                <GnbBtns name={"LOCATION"} link={"/location"} />
+                <GnbBtns name={"JOIN"} link={"/join"} />
+            </ul>
+
+        )
+    }
 }
 
 
-function Gnb() {
 
-    return (
-        <ul id="gnb">
-            <GnbBtns name={"About"} link={"/about"} />
-            <GnbBtns name={"Q&A"} link={"/qna"} />
-            <GnbBtns name={"GALLERY"} link={"/gallery"} />
-            <GnbBtns name={"VIDEOS"} link={"/youtube"} />
-            <GnbBtns name={"LOCATION"} link={"/location"} />
-            <GnbBtns name={"JOIN"} link={"/join"} />
-        </ul>
-
-    )
-}
