@@ -5,20 +5,20 @@ import { useState, useEffect, useRef } from 'react';
 import GnbBtns from "./commonComponents/GnbBtns";
 export default function Header(props) {
     const mobileNav = useRef(null)
-    const [isOn, setIsOn] = useState(true)
+    const [isOn, setIsOn] = useState(false)
 
-
+    const handleResize = () => {
+        if (window.innerWidth >= 1001) {
+            setIsOn(false)
+        }
+    }
 
 
     useEffect(() => {
-        window.addEventListener("resize", (e) => {
-            if (e.target.innerWidth >= 1001) {
-                setIsOn(false)
-            }
-        })
+        window.addEventListener("resize", handleResize)
 
         return () => {
-            setIsOn(false)
+            window.removeEventListener("resize", handleResize)
         }
     }, [mobileNav])
     return (
