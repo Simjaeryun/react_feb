@@ -13,14 +13,17 @@ export default function Header(props) {
     useEffect(() => {
         window.addEventListener("resize", (e) => {
             if (e.target.innerWidth >= 1001) {
-                mobileNav.current.classList.remove("on");
+                setIsOn(false)
             }
         })
     }, [mobileNav])
     return (
         <>
             <header className={props.type}>
-                <div className="inner" ref={mobileNav}>
+                <div
+                    className={isOn ? "inner on" : "inner"}
+                    ref={mobileNav}
+                >
                     <h1><NavLink exact to="/">MAGAZINE</NavLink></h1>
                     <Gnb />
                 </div>
@@ -28,10 +31,8 @@ export default function Header(props) {
                     icon={faBars}
                     onClick={() => {
                         if (isOn) {
-                            mobileNav.current.classList.add("on")
                             setIsOn(false)
                         } else {
-                            mobileNav.current.classList.remove("on")
                             setIsOn(true)
                         }
                     }}
@@ -43,6 +44,7 @@ export default function Header(props) {
 
 
 function Gnb() {
+
     return (
         <ul id="gnb">
             <GnbBtns name={"About"} link={"/about"} />

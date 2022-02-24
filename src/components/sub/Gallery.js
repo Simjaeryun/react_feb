@@ -50,13 +50,9 @@ export default function Gallery() {
         })
         setLoading(false);
         setEnableClick(true);
-
-
     }
 
-
     const showInterest = () => {
-
         if (enableClick && !isInterest) {
             setIsInterest(false);
             setEnableClick(false);
