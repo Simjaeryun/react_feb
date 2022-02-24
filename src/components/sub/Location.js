@@ -89,10 +89,9 @@ export default function Location() {
                     <h2>FIND<br /> A <br />BOUTIQUE</h2>
                     {mapInfo.map((data, idx) => {
                         return (
-                            <div className="location_pic_box">
+                            <div className="location_pic_box" key={idx}>
                                 <div className="location_pic">
                                     <img
-                                        key={idx}
                                         src={`${path}${data.mapImg}`}
                                         alt=""
                                         ref={location}

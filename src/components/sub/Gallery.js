@@ -5,6 +5,7 @@ import { setFlicker } from '../../redux/actions';
 import Masonry from 'react-masonry-component';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, EffectCube } from 'swiper';
+import { type } from '@testing-library/user-event/dist/type';
 
 export default function Gallery() {
     const main = useRef(null);
@@ -40,7 +41,6 @@ export default function Gallery() {
         if (opt.type === 'search') {
             url = `https://www.flickr.com/services/rest/?method=${method2}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
         }
-        // url = `https://www.flickr.com/services/rest/?method=${method1}&per_page=${num}&api_key=${api_key}&format=json&nojsoncallback=1`;
         await axios.get(url).then(json => {
             if (json.data.photos.photo.length === 0) {
                 alert("해당 검색어의 이미지가 없습니다.")
@@ -50,8 +50,10 @@ export default function Gallery() {
         })
         setLoading(false);
         setEnableClick(true);
-        if (frame !== null) frame.current.classList.add('on');
+
+
     }
+
 
     const showInterest = () => {
 
@@ -93,11 +95,13 @@ export default function Gallery() {
     }
 
     useEffect(() => {
-        main.current.classList.add('on');
         getFlickr({
             type: 'interest',
             count: 50
         });
+        return () => {
+            setLoading(false);
+        }
     }, []);
 
     return (
@@ -151,7 +155,10 @@ export default function Gallery() {
                             />
                             : null}
                     </div>
-                    <section ref={frame}>
+                    <section
+                        ref={frame}
+                        className={!loading ? "on" : ""}
+                    >
                         <Masonry
                             elementType={'div'}
                             options={masonryOptions}
