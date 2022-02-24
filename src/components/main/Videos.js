@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setYoutube } from "../../redux/actions";
 
 export default function Videos() {
-    //useSelector로 youtubeReducer에 있는 초기 빈 배열을 가져옴
     const vidData = useSelector(state => state.youtubeReducer.youtube);
     const dispatch = useDispatch();
 
@@ -20,7 +19,6 @@ export default function Videos() {
         fetchYoutube();
     }, []);
 
-    //axios로 받아온 youtube data를 dispatch로 reducer에 전달 
     const fetchYoutube = async () => {
         await axios.get(url).then(json => {
             dispatch(setYoutube(json.data.items));
@@ -48,12 +46,14 @@ export default function Videos() {
                                                 src={vidData[idx].snippet.thumbnails.maxres.url} alt=""
                                             />
                                         </div>
-                                        <h1 className="videos_main_title">
-                                            {tit_len > 40 ? tit.substr(0, 40) + ".." : tit}
-                                        </h1>
-                                        <p className="videos_main_description">
-                                            {desc_len > 200 ? desc.substr(0, 200) + "..." : desc}
-                                        </p>
+                                        <div className="videos_main_txt">
+                                            <h1 className="videos_main_title">
+                                                {tit_len > 40 ? tit.substr(0, 40) + ".." : tit}
+                                            </h1>
+                                            <p className="videos_main_description">
+                                                {desc_len > 200 ? desc.substr(0, 200) + "..." : desc}
+                                            </p>
+                                        </div>
                                     </div>
                                     : null
                             )
@@ -65,8 +65,6 @@ export default function Videos() {
                             let tit_len = tit.length;
                             let desc = vid.snippet.description;
                             let desc_len = desc.length;
-
-
                             return (
                                 idx < 4
                                     ?

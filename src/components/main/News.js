@@ -31,7 +31,7 @@ export default function News() {
     return (
         <section id='news'>
             <div className="inner">
-                <h1>Recent Post</h1>
+                <h1>Q&A</h1>
                 <ul>
                     {posts.map((post, idx) => {
                         return (

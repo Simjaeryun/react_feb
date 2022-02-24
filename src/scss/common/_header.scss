@@ -3,6 +3,7 @@ header {
 	height: 120px;
 	z-index: 5;
 	border-bottom: 2px solid #000;
+	position: relative;
 	.inner {
 		padding: 0 22rem 0 32rem;
 		height: 100%;
@@ -29,15 +30,13 @@ header {
 				transition: 0.5s;
 			}
 		}
-
-		.fa-bars {
-			font-size: 20px;
-			color: #fff;
-			position: absolute;
-			bottom: 20px;
-			right: 5vw;
-			display: none;
-		}
+	}
+	.fa-bars {
+		font-size: 40px;
+		position: absolute;
+		right: 15rem;
+		display: none;
+		cursor: pointer;
 	}
 	&.sub_header {
 		top: 0;

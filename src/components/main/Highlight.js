@@ -14,10 +14,20 @@ export default function Highlight() {
                         className="img_container"
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
                         spaceBetween={15}
-                        slidesPerView={4}
+                        slidesPerView={1}
                         scrollbar={{ draggable: true }}
+                        breakpoints={{
+                            1650: {
+                                slidesPerView: 4
+                            },
+                            1000: {
+                                slidesPerView: 3
+                            },
+                            600: {
+                                slidesPerView: 2
+                            }
+                        }}
                     >
-                        <div className="younzu"></div>
                         {flickerImg.map((data, idx) => {
                             const len = data.title.length;
                             console.log(len)

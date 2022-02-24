@@ -1,26 +1,36 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react";
-import { useEffect } from "react";
-
+import { useState, useEffect, useRef } from 'react';
 export default function Header(props) {
-    const [isOn, setIsOn] = useState(false);
-    const toggleNav = () => setIsOn(!isOn);
-    const closeNav = () => window.innerWidth > 1200 && setIsOn(false)
-
+    const mobileNav = useRef(null)
+    const [isOn, setIsOn] = useState(true)
     useEffect(() => {
-        window.addEventListener("resize", closeNav)
-        return () => window.removeEventListener("resize", closeNav);
+        window.addEventListener("resize", (e) => {
+            if (e.target.innerWidth >= 1001) {
+                mobileNav.current.classList.remove("on");
+            }
+        })
     })
     return (
         <>
             <header className={props.type}>
-                <div className="inner">
+                <div className="inner" ref={mobileNav}>
                     <h1><NavLink exact to="/">MAGAZINE</NavLink></h1>
                     <Gnb />
-                    <FontAwesomeIcon icon={faBars} onClick={toggleNav} />
                 </div>
+                <FontAwesomeIcon
+                    icon={faBars}
+                    onClick={() => {
+                        if (isOn) {
+                            mobileNav.current.classList.add("on")
+                            setIsOn(false)
+                        } else {
+                            mobileNav.current.classList.remove("on")
+                            setIsOn(true)
+                        }
+                    }}
+                />
             </header>
         </>
     )
@@ -38,5 +48,6 @@ function Gnb() {
             <li><NavLink activeStyle={active} to="/location">LOCATION</NavLink></li>
             <li><NavLink activeStyle={active} to="/join">JOIN</NavLink></li>
         </ul>
+
     )
 }
