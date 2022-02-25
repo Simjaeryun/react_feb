@@ -185,7 +185,7 @@ export default function Qna() {
                                             <>
                                                 <div className="post">
                                                     <h2>{post.title}</h2>
-                                                    <div className="qna_content_txt">{post.content}</div>
+                                                    <p className="qna_content_txt">{post.content}</p>
                                                 </div>
 
                                                 <div className="btns">
