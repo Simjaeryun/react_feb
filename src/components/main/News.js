@@ -13,7 +13,6 @@ export default function News() {
 
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
-
         if (data) {
             return JSON.parse(data);
         } else {

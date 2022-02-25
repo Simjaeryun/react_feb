@@ -93,8 +93,12 @@
 	}
 	.youtube {
 		.inner {
-			padding-top: 120px;
 			padding: 120px 5rem 0px 5rem;
+			section {
+				.hot_youtube {
+					overflow: hidden;
+				}
+			}
 		}
 	}
 	.location {

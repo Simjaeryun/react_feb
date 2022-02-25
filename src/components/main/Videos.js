@@ -29,7 +29,7 @@ export default function Videos() {
             <section className="videos">
                 <div className="inner" >
                     <div className="videos_main">
-                        {vidData.map((vid, idx) => {
+                        {vidData.map((_, idx) => {
                             let tit = vidData[idx].snippet.title;
                             let tit_len = tit.length;
                             let desc = vidData[idx].snippet.description;
