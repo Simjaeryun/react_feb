@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function News() {
 
     const defaultData = [
-        { title: 'Hello1', content: 'Here comes description in detail.' },
+        { title: 'Hello1', content: 'Here comes description in detail dasdsadasdasdsadas.' },
         { title: 'Hello2', content: 'Here comes description in detail.' },
         { title: 'Hello3', content: 'Here comes description in detail.' },
         { title: 'Hello4', content: 'Here comes description in detail.' },
@@ -13,7 +13,7 @@ export default function News() {
 
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
-        if (data) {
+        if (data && data !== "[]") {
             return JSON.parse(data);
         } else {
             return defaultData;

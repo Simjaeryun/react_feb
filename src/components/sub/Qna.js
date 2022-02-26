@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import QnaQustion from "./subComponents/QnaQustion";
 export default function Qna() {
     const main = useRef(null);
@@ -10,12 +8,9 @@ export default function Qna() {
     const updateInput = useRef(null);
     const updateTextarea = useRef(null);
 
-    const path = process.env.PUBLIC_URL;
-
     const getLocalItems = () => {
         let data = localStorage.getItem('posts');
         if (data) {
-            //해당 데이터를 객체형태로 다시 변환해서 리턴
             return JSON.parse(data);
         }
         else {
@@ -23,7 +18,6 @@ export default function Qna() {
         }
     }
 
-    //getLocalItems의 리턴값에 따라 posts에 값이 할당됨
     const [posts, setPosts] = useState(getLocalItems)
 
     const createPost = () => {
@@ -160,7 +154,6 @@ export default function Qna() {
                                     {
                                         post.enableUpdate
                                             ?
-                                            // 수정모드 일때 리턴될 JSX
                                             <>
                                                 <div className="post">
                                                     <input
@@ -181,11 +174,10 @@ export default function Qna() {
                                                 </div>
                                             </>
                                             :
-                                            // 출력모드 일때 리턴될 JSX
                                             <>
                                                 <div className="post">
                                                     <h2>{post.title}</h2>
-                                                    <p className="qna_content_txt">{post.content}</p>
+                                                    <p className="qna_content_txt">{post.content.length > 50 ? post.content.substr(0, 50) : post.content}</p>
                                                 </div>
 
                                                 <div className="btns">
@@ -194,8 +186,6 @@ export default function Qna() {
                                                 </div>
                                             </>
                                     }
-
-
                                 </article>
                             )
                         })}

@@ -62,19 +62,17 @@
 						cursor: pointer;
 						border: none;
 						background: #aaa;
+						width: 49%;
+						padding: 20px;
+						font-size: 20px;
+						font-weight: 700;
+						font-family: "Noto Sans", sans-serif;
+						cursor: pointer;
 						color: #fff;
 						&:hover {
 							background: #666;
 						}
 					}
-				}
-				button {
-					width: 49%;
-					padding: 20px;
-					font-size: 20px;
-					font-weight: 700;
-					font-family: "Noto Sans", sans-serif;
-					cursor: pointer;
 				}
 			}
 			.showList {
