@@ -194,6 +194,38 @@
 			}
 		}
 	}
+	.location {
+		section {
+			margin-bottom: 0;
+			#map {
+				width: 100%;
+				height: 600px;
+				position: relative;
+			}
+			.location_content {
+				position: relative;
+				width: 100%;
+				border: none;
+				h2 {
+					margin-bottom: 30px;
+				}
+				.location_pic_box {
+					padding-top: 0px;
+					margin-top: 0px;
+					margin-bottom: 30px;
+					.location_pic {
+						width: 80%;
+					}
+					.location_pic_txt {
+						text-align: center;
+						p {
+							padding: 0px 80px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 600px) {
