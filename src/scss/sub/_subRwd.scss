@@ -56,37 +56,8 @@
 				margin-top: 50px;
 			}
 			> section {
-				transform: translateY(200px);
-				transition: 1s;
-				opacity: 0;
-				&.on {
-					transform: translateY(0px);
-					opacity: 1;
-				}
-
-				&::after {
-					content: "";
-					display: block;
-					clear: both;
-				}
 				article {
 					width: 33.333%;
-					float: left;
-					padding: 10px;
-					> .inner {
-						width: 100%;
-						height: 100%;
-						padding: 10px;
-						.pic {
-							width: 100%;
-							cursor: pointer;
-							img {
-								width: 100%;
-								object-fit: cover;
-								box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-							}
-						}
-					}
 				}
 			}
 		}
@@ -112,6 +83,7 @@
 		}
 	}
 }
+
 @media only screen and (max-width: 1000px) {
 	.content {
 		.inner {
@@ -142,6 +114,79 @@
 								font-size: 16px;
 								padding: 5px;
 								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.gallery {
+		.inner {
+			> section {
+				article {
+					width: 50%;
+				}
+			}
+		}
+	}
+	.youtube {
+		.inner {
+			padding: 0px;
+			padding-top: 120px;
+			h2 {
+				font-family: "Pretendard-Black";
+				color: #777;
+				font-size: 50px;
+				line-height: 65px;
+				margin: auto;
+				margin-bottom: 50px;
+				margin-top: 50px;
+				letter-spacing: 1px;
+				text-align: center;
+				strong {
+					color: #000;
+					font-size: 60px;
+				}
+
+				&:first-child {
+					margin-top: 0px;
+				}
+			}
+			section {
+				display: flex;
+				flex-wrap: wrap;
+				padding-bottom: 100px;
+				position: relative;
+				.youtube_container {
+					width: 100%;
+					flex-direction: column;
+					margin-top: 0px;
+					.youtube_column {
+						width: 100%;
+						padding-bottom: 0px;
+						.youtube_content_title {
+							top: 20px;
+							left: 50%;
+							transform: translateX(-50%);
+							writing-mode: inherit;
+							font-size: 45px;
+						}
+					}
+				}
+				.all_youtube {
+					.all_youtube_content {
+						width: 100%;
+						height: 100%;
+						margin-bottom: 0px;
+						.pic {
+							width: 100%;
+
+							img {
+								width: 100%;
+								height: 100%;
+								box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+								cursor: pointer;
 							}
 						}
 					}
