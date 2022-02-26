@@ -38,7 +38,7 @@ export default function News() {
                                 ?
                                 <li key={idx}>
                                     <h2>{post.title}</h2>
-                                    <p>{post.content}</p>
+                                    <p>{post.content.length > 33 ? post.content.substr(0, 33) : post.content}</p>
                                 </li>
                                 : null
                         )
