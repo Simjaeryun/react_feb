@@ -239,6 +239,61 @@
 }
 
 @media only screen and (max-width: 600px) {
+	.about {
+		.inner {
+			padding-top: 100px;
+			padding-bottom: 0px;
+			.about_we {
+				margin-bottom: 50px;
+				h2 {
+					margin: 0px;
+					font-size: 30px;
+					margin-bottom: 30px;
+					strong {
+						font-size: 40px;
+					}
+				}
+				.about_we_content {
+					.about_we_txt {
+						padding: 20px 0px;
+						font-size: 16px;
+						line-height: 22px;
+					}
+				}
+			}
+			.about_member {
+				margin-bottom: 0px;
+				.about_member_content {
+					article {
+						width: 100%;
+						height: 250px;
+						flex-direction: column;
+						justify-content: space-between;
+						img {
+							width: 100%;
+							height: 70%;
+							object-fit: cover;
+							object-position: top;
+						}
+						.about_member_txt {
+							height: 20%;
+							h3 {
+								font-size: 24px;
+								margin-bottom: 0px;
+							}
+							h4 {
+								font-size: 18px;
+								margin-bottom: 0px;
+							}
+							p {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.youtube {
 		.inner {
 			padding: 120px 5rem 0px 5rem;
