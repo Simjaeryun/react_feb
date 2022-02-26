@@ -229,9 +229,13 @@
 	.join {
 		.inner {
 			padding-top: 50px;
+
 			section {
 				form {
 					width: 100%;
+				}
+				.form_img {
+					display: none;
 				}
 			}
 		}
@@ -239,9 +243,13 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.about {
+	.content {
 		.inner {
 			padding-top: 100px;
+		}
+	}
+	.about {
+		.inner {
 			padding-bottom: 0px;
 			.about_we {
 				margin-bottom: 50px;
@@ -356,13 +364,42 @@
 			}
 		}
 	}
-
-	.youtube {
+	.gallery {
 		.inner {
-			padding: 120px 5rem 0px 5rem;
+			> section {
+				article {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.youtube {
+		background: #000;
+		.inner {
 			section {
-				.hot_youtube {
-					overflow: hidden;
+				margin-bottom: 0px;
+				.hot_youtube_container {
+					height: 300px;
+					.hot_youtube {
+						overflow: hidden;
+						height: 300px;
+					}
+				}
+			}
+		}
+	}
+	.location {
+		section {
+			#map {
+				height: 500px;
+			}
+			.location_content {
+				.location_pic_box {
+					.location_pic_txt {
+						p {
+							padding: 0px 20px;
+						}
+					}
 				}
 			}
 		}
